@@ -8,26 +8,26 @@
    =================== */
 
 .header-container {
-  border-bottom: 20px solid #e44d26;
+  border-bottom: 20px solid $orange;
 }
 
 .footer-container {
-  border-top: 20px solid #e44d26;
+  border-top: 20px solid $orange;
 }
 
 main {
   aside, article {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid $orange;
   }
 }
 
 .header-container, .footer-container {
-  background: #f16529;
+  background: $orange-sec;
 }
 
 main {
   aside, article {
-    background: #f16529;
+    background: $orange-sec;
   }
 }
 

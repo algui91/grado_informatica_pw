@@ -382,18 +382,9 @@ fieldset {
 textarea {
   resize: vertical; }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0; }
-
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-body {
-  font: 16px/26px Helvetica, Helvetica Neue, Arial; }
-
 .wrapper {
   width: 90%;
   margin: 0 5%; }
@@ -402,30 +393,6 @@ body {
     display: table;
     clear: both; }
 
-/* ==============
-    MOBILE: Menu
-   ============== */
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-nav a {
-  display: block;
-  margin-bottom: 10px;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  background: #e44d26; }
-  nav a:hover, nav a:visited {
-    color: white; }
-  nav a:hover {
-    text-decoration: underline; }
-
-/* ==============
-    MOBILE: Main
-   ============== */
 main {
   padding: 30px 0; }
   main article h1 {
@@ -437,12 +404,6 @@ main {
 .footer-container footer {
   color: white;
   padding: 20px 0; }
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-.ie7 .title {
-  padding-top: 20px; }
 
 /* ==========================================================================
    Author's custom styles
@@ -458,6 +419,22 @@ main {
   position: relative;
   top: 50%;
   transform: translateY(50%); }
+
+.features {
+  font-size: 0;
+  margin-bottom: 50px; }
+
+main .features article {
+  width: 90%;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 8px; }
+  @media (min-width: 768px) {
+    main .features article {
+      width: 30%;
+      vertical-align: top; } }
 
 /* ==========================================================================
    Media Queries
@@ -477,13 +454,7 @@ main {
   nav li:last-child a {
     margin-right: 0; }
   nav ul li {
-    display: inline; }
-
-  /* ========================
-      INTERMEDIATE: IE Fixes
-     ======================== */
-  .oldie nav a {
-    margin: 0 0.7%; } }
+    display: inline; } }
 @media only screen and (min-width: 768px) {
   /* ====================
       WIDE: CSS3 Effects
@@ -522,55 +493,12 @@ main {
     width: 1026px;
     /* 1140px - 10% for margins */
     margin: 0 auto; } }
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
-  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto; }
-
-.invisible {
-  visibility: hidden; }
-
-.features {
-  font-size: 0;
-  margin-bottom: 50px; }
-
-main .features article {
-  width: 95%;
-  display: inline-block;
-  font-size: 16px;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 8px; }
-  @media only screen and (min-width: 768px) {
-    main .features article {
-      width: 30%;
-      vertical-align: top; } }
-
 /**
  * Basic typography style for copy text
  */
 body {
   color: #222222;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font: 16px/26px "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 /**
  * Clear inner floats
