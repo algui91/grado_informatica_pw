@@ -392,6 +392,11 @@ textarea {
     content: '';
     display: table;
     clear: both; }
+  @media (min-width: 1140px) {
+    .wrapper {
+      width: 1026px;
+      /* 1140px - 10% for margins */
+      margin: 0 auto; } }
 
 main {
   padding: 30px 0; }
@@ -405,94 +410,29 @@ main {
   color: white;
   padding: 20px 0; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-.title:before {
-  content: url(../favicon.ico);
-  vertical-align: middle; }
+.header-container {
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+  box-shadow: 0 5px 10px #aaa; }
 
-#login-container {
-  display: inline-block;
+main aside, main article {
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+  box-shadow: 0 5px 10px #aaa; }
+
+/* ============
+    WIDE: Menu
+   ============ */
+.title {
+  float: left; }
+
+/* ============
+    WIDE: Main
+   ============ */
+main aside {
   float: right;
-  /* For middle align*/
-  position: relative;
-  top: 50%;
-  transform: translateY(50%); }
+  width: 28%; }
 
-.features {
-  font-size: 0;
-  margin-bottom: 50px; }
-
-main .features article {
-  width: 90%;
-  display: inline-block;
-  font-size: 16px;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 8px; }
-  @media (min-width: 768px) {
-    main .features article {
-      width: 30%;
-      vertical-align: top; } }
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-@media only screen and (min-width: 480px) {
-  /* ====================
-      INTERMEDIATE: Menu
-     ==================== */
-  nav a {
-    float: left;
-    width: 27%;
-    margin: 0 1.7%;
-    padding: 25px 2%;
-    margin-bottom: 0; }
-  nav li:first-child a {
-    margin-left: 0; }
-  nav li:last-child a {
-    margin-right: 0; }
-  nav ul li {
-    display: inline; } }
-@media only screen and (min-width: 768px) {
-  /* ====================
-      WIDE: CSS3 Effects
-     ==================== */
-  .header-container {
-    -webkit-box-shadow: 0 5px 10px #aaa;
-    -moz-box-shadow: 0 5px 10px #aaa;
-    box-shadow: 0 5px 10px #aaa; }
-
-  main aside, main article {
-    -webkit-box-shadow: 0 5px 10px #aaa;
-    -moz-box-shadow: 0 5px 10px #aaa;
-    box-shadow: 0 5px 10px #aaa; }
-
-  /* ============
-      WIDE: Menu
-     ============ */
-  .title {
-    float: left; }
-
-  nav {
-    float: right;
-    width: 38%; }
-
-  /* ============
-      WIDE: Main
-     ============ */
-  main aside {
-    float: right;
-    width: 28%; } }
-@media only screen and (min-width: 1140px) {
-  /* ===============
-      Maximal Width
-     =============== */
-  .wrapper {
-    width: 1026px;
-    /* 1140px - 10% for margins */
-    margin: 0 auto; } }
 /**
  * Basic typography style for copy text
  */
@@ -555,6 +495,67 @@ body {
   position: absolute;
   width: 1px; }
 
+.title:before {
+  content: url(../favicon.ico);
+  vertical-align: middle; }
+
+#login-container {
+  display: inline-block;
+  float: left;
+  margin-left: 1em;
+  /* For middle align*/
+  position: relative;
+  top: 50%;
+  transform: translateY(50%); }
+
+main .new {
+  font-size: 0;
+  margin-bottom: 50px; }
+  main .new article {
+    width: 90%;
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 5px 0;
+    border-radius: 8px; }
+    @media (min-width: 768px) {
+      main .new article {
+        width: 30%;
+        vertical-align: top; } }
+main .featured section {
+  color: white;
+  padding: 0px 5% 10px;
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+  box-shadow: 0 5px 10px #aaa;
+  width: 90%;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 5px 0;
+  border-radius: 8px; }
+  @media (min-width: 768px) {
+    main .featured section {
+      width: 30%;
+      vertical-align: top; } }
+main .latest article {
+  width: 90%;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 5px 0;
+  border-radius: 8px; }
+  @media (min-width: 768px) {
+    main .latest article {
+      width: 20%;
+      vertical-align: top; } }
+
+.genrenews {
+  float: right; }
+
 /* ===================
     ALL: Orange Theme
    =================== */
@@ -570,10 +571,15 @@ main aside, main article {
 .header-container, .footer-container {
   background: #f16529; }
 
-main aside, main article {
+main aside, main article, main .featured section {
   background: #f16529; }
 
 .title {
   color: white; }
+
+section h2 {
+  background: #e44d26;
+  display: inline;
+  border-radius: 4px; }
 
 /*# sourceMappingURL=main.css.map */

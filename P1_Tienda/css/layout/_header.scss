@@ -1,3 +1,17 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+.title:before {
+  content: url(../favicon.ico);
+  vertical-align: middle;
+}
+
+#login-container {
+  display: inline-block;
+  float: left;
+  margin-left: 1em;
+  /* For middle align*/
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}

@@ -73,7 +73,6 @@
 @mixin row () {
   font-size: 0;
 }
-
 // This is column mixins.
 @mixin col ($col, $sum, $gap: 1em, $align: top) {
     width: 90%;
@@ -81,6 +80,7 @@
     font-size: 16px;
     padding-left: $gap;
     padding-right: $gap;
+    margin: 5px 0;
 
     @include respond-to('medium') {
       width: percentage($col/$sum) - (percentage($col/$sum) % 10);

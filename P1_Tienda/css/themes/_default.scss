@@ -26,11 +26,17 @@ main {
 }
 
 main {
-  aside, article {
+  aside, article, .featured section {
     background: $orange-sec;
   }
 }
 
 .title {
   color: white;
+}
+
+section h2 {
+  background: $orange;
+  display: inline;
+  @include rounded;
 }
