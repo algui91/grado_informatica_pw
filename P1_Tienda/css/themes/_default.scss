@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container {
+  border-bottom: 20px solid #e44d26;
+}
+
+.footer-container {
+  border-top: 20px solid #e44d26;
+}
+
+main {
+  aside, article {
+    border-top: 20px solid #e44d26;
+  }
+}
+
+.header-container, .footer-container {
+  background: #f16529;
+}
+
+main {
+  aside, article {
+    background: #f16529;
+  }
+}
+
+.title {
+  color: white;
+}
