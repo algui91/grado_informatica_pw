@@ -577,6 +577,21 @@ main aside, main article, main .featured section {
 .title {
   color: white; }
 
+.main-container aside.ad {
+  height: 800px;
+  float: right;
+  background: #f16529;
+  width: 90%;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 5px 0; }
+  @media (min-width: 768px) {
+    .main-container aside.ad {
+      width: 10%;
+      vertical-align: top; } }
+
 section h2 {
   background: #e44d26;
   display: inline;

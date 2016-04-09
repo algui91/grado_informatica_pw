@@ -35,6 +35,13 @@ main {
   color: white;
 }
 
+.main-container aside.ad {
+  height: 800px;
+  float: right;
+  background: $orange-sec;
+  @include col(1,6);
+}
+
 section h2 {
   background: $orange;
   display: inline;
