@@ -6,12 +6,22 @@
   vertical-align: middle;
 }
 
+.header-container header {
+  align-items: center;
+}
+
 #login-container {
-  display: inline-block;
-  float: left;
-  margin-left: 1em;
-  /* For middle align*/
-  position: relative;
-  top: 50%;
-  transform: translateY(50%);
+  input {
+    display: none;
+  }
+  @include respond-to('medium'){
+    display: inline-block;
+    margin-left: 1em;
+    input {
+      display: block;
+    }
+  }
+  form {
+    @include flex-grid-container('row nowrap');
+  }
 }
