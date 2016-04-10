@@ -98,13 +98,15 @@
   flex-flow: #{$flow};
 }
 
-@mixin flex-grid-item($arg, $gutter: null, $margin: .2em, $margin-bottom: null) {
-  flex-basis: gutter-value($arg, $gutter);
+@mixin flex-grid-item($basis:null, $grow: null, $margin: .2em) {
+  flex-basis: $basis;//gutter-value($arg, $gutter);
+  flex-grow: $grow;//gutter-value($arg, $gutter);
+  @include rounded(8px);
   margin: $margin;
-  @if $margin-bottom != null {
-    margin-bottom: $margin-bottom;
-    &:nth-last-child(-n+#{$arg}) {
-      margin-bottom: 0;
-    }
-  }
+  // @if $margin-bottom != null {
+  //   margin-bottom: $margin-bottom;
+  //   &:nth-last-child(-n+#{$arg}) {
+  //     margin-bottom: 0;
+  //   }
+  // }
 }
