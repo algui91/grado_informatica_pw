@@ -387,16 +387,16 @@ textarea {
    ========================================================================== */
 .wrapper {
   width: 90%;
-  margin: 0 5%; }
-  .wrapper::after {
-    content: '';
-    display: table;
-    clear: both; }
-  @media (min-width: 1024px) {
+  margin: 0 5%;
+}
+
+@media (min-width: 1024px) {
     .wrapper {
       width: 1026px;
       /* 1140px - 10% for margins */
-      margin: 0 auto; } }
+      margin: 0 auto;
+    }
+}
 
 main {
   padding: 30px 0; }
@@ -434,7 +434,7 @@ main aside {
   width: 28%; }
 
 figure {
-  margin: 1em; }
+  margin: 0; }
 
 .row-nowrap {
   display: flex;
@@ -541,6 +541,20 @@ main .new-container {
 @media (min-width: 1024px) {
   main #left-column {
     flex-basis: 70%; } }
+main article.disc-contents {
+  display: flex;
+  flex-flow: row nowrap; }
+  main article.disc-contents .disc-left {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start; }
+  main article.disc-contents .disc-right {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 4em;
+    justify-content: space-between; }
+    main article.disc-contents .disc-right .row-nowrap {
+      justify-content: space-between; }
 main .featured-container {
   display: flex;
   flex-flow: column wrap; }
