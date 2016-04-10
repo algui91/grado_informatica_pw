@@ -387,16 +387,16 @@ textarea {
    ========================================================================== */
 .wrapper {
   width: 90%;
-  margin: 0 5%;
-}
-
-@media (min-width: 1024px) {
+  margin: 0 5%; }
+  .wrapper::after {
+    content: '';
+    display: table;
+    clear: both; }
+  @media (min-width: 1024px) {
     .wrapper {
       width: 1026px;
       /* 1140px - 10% for margins */
-      margin: 0 auto;
-    }
-}
+      margin: 0 auto; } }
 
 main {
   padding: 30px 0; }
@@ -555,6 +555,12 @@ main article.disc-contents {
     justify-content: space-between; }
     main article.disc-contents .disc-right .row-nowrap {
       justify-content: space-between; }
+main .flex-container-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background: #e44d26;
+  border-radius: 8px; }
 main .featured-container {
   display: flex;
   flex-flow: column wrap; }
@@ -600,9 +606,14 @@ main .flex-container-epic {
       flex-flow: row nowrap; } }
   main .flex-container-epic .best-seller {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-end;
+    flex-flow: column nowrap;
+    align-items: center;
     justify-content: space-between; }
+    @media (min-width: 768px) {
+      main .flex-container-epic .best-seller {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end; } }
     main .flex-container-epic .best-seller header {
       align-self: center; }
   main .flex-container-epic .other-discs {
@@ -648,6 +659,21 @@ main .section-title h2 {
   display: block; }
 main .section-title h2:before {
   content: url(../favicon.ico); }
+
+.rowParent, .columnParent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch; }
+
+.columnParent {
+  flex-direction: column; }
+
+.flexChild {
+  flex: 1;
+  align-self: auto; }
 
 /* ===================
     ALL: Orange Theme

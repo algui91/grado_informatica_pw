@@ -41,6 +41,13 @@ main {
     }
   }
 
+  .flex-container-form {
+    @include flex-grid-container('row wrap');
+    justify-content: center;
+    background: $orange;
+    @include rounded(8px);
+  }
+
 	.featured-container{
 		@include flex-grid-container('column wrap');
 		@include respond-to('small') {
@@ -85,8 +92,13 @@ main {
       @include flex-grid-container('row nowrap');
     }
     .best-seller {
-      @include flex-grid-container('row nowrap');
-      align-items: flex-end;
+
+      @include flex-grid-container('column nowrap');
+      align-items: center;
+      @include respond-to('medium') {
+        @include flex-grid-container('row nowrap');
+        align-items: flex-end;
+      }
       justify-content: space-between;
       header {
         align-self: center;
@@ -140,4 +152,22 @@ main {
 	.section-title h2:before {
 	  content: url(../favicon.ico);
 	}
+}
+
+.rowParent, .columnParent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.columnParent{
+  flex-direction: column;
+}
+
+.flexChild{
+  flex: 1;
+  align-self: auto;
 }
