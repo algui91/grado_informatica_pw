@@ -100,3 +100,20 @@ main {
       width: 28%;
     }
   }
+
+  figure {
+    margin: 1em;
+  }
+
+  .row-nowrap {
+    @include flex-grid-container('row nowrap');
+  }
+  .row-wrap {
+    @include flex-grid-container('row wrap');
+  }
+  .col-nowrap {
+    @include flex-grid-container('column nowrap');
+  }
+  .col-wrap {
+    @include flex-grid-container('column wrap');
+  }

@@ -433,6 +433,25 @@ main aside {
   float: right;
   width: 28%; }
 
+figure {
+  margin: 1em; }
+
+.row-nowrap {
+  display: flex;
+  flex-flow: row nowrap; }
+
+.row-wrap {
+  display: flex;
+  flex-flow: row wrap; }
+
+.col-nowrap {
+  display: flex;
+  flex-flow: column nowrap; }
+
+.col-wrap {
+  display: flex;
+  flex-flow: column wrap; }
+
 /**
  * Basic typography style for copy text
  */
@@ -558,33 +577,44 @@ main .latest-container {
 main .flex-container {
   display: flex;
   flex-flow: row wrap; }
-main .flex-container-rock {
+main .flex-container-epic {
   display: flex;
   flex-flow: row wrap; }
   @media (min-width: 1024px) {
-    main .flex-container-rock {
+    main .flex-container-epic {
       display: flex;
       flex-flow: row nowrap; } }
-  main .flex-container-rock .best-seller {
-    flex-grow: 3;
-    border-radius: 8px;
-    margin: 0.2em; }
-  main .flex-container-rock .newer {
+  main .flex-container-epic .best-seller {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between; }
+    main .flex-container-epic .best-seller header {
+      align-self: center; }
+  main .flex-container-epic .other-discs {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between; }
+    main .flex-container-epic .other-discs header {
+      align-self: center; }
+  main .flex-container-epic .newer {
     display: flex;
     flex-flow: row wrap;
     background: #f16529;
     flex-basis: 100%;
     justify-content: space-between; }
-    main .flex-container-rock .newer article {
+    main .flex-container-epic .newer article {
       flex-basis: 12%; }
     @media (min-width: 1024px) {
-      main .flex-container-rock .newer {
+      main .flex-container-epic .newer {
         display: block;
         flex-basis: 0; } }
-  main .flex-container-rock .featured-rock {
+  main .flex-container-epic .featured-epic {
     display: flex;
     flex-flow: row wrap; }
-    main .flex-container-rock .featured-rock section {
+    main .flex-container-epic .featured-epic article {
+      padding: 5px;
       -webkit-box-shadow: 0 5px 10px #aaa;
       -moz-box-shadow: 0 5px 10px #aaa;
       box-shadow: 0 5px 10px #aaa;
@@ -594,8 +624,8 @@ main .flex-container-rock {
       border-radius: 8px;
       margin: 0.2em; }
       @media (min-width: 768px) {
-        main .flex-container-rock .featured-rock section {
-          flex-basis: 49%;
+        main .flex-container-epic .featured-epic article {
+          flex-basis: 48%;
           border-radius: 8px;
           margin: 0.2em; } }
 main .section-title h2 {
