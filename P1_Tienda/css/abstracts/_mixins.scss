@@ -23,15 +23,6 @@
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Hugo Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
-    @content;
-  }
-}
-
 /// Helper to clear inner floats
 /// @author Nicolas Gallagher
 /// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
@@ -66,28 +57,6 @@
   }
 }
 
-
-// // This is mixin which you will include in parent
-// // of columns. It kills default margin of inline-block
-// // elements.
-// @mixin row () {
-//   font-size: 0;
-// }
-// // This is column mixins.
-// @mixin col ($col, $sum, $gap: 1em, $align: top) {
-//     width: 90%;
-//     display: inline-block;
-//     font-size: 16px;
-//     padding-left: $gap;
-//     padding-right: $gap;
-//     margin: 5px 0;
-//
-//     @include respond-to('medium') {
-//       width: percentage($col/$sum) - (percentage($col/$sum) % 10);
-//       vertical-align: $align;
-//     }
-// }
-
 @mixin rounded($radius:4px) {
   border-radius : $radius;
 }
@@ -99,14 +68,8 @@
 }
 
 @mixin flex-grid-item($basis:null, $grow: null, $margin: .2em) {
-  flex-basis: $basis;//gutter-value($arg, $gutter);
-  flex-grow: $grow;//gutter-value($arg, $gutter);
+  flex-basis: $basis;
+  flex-grow: $grow;
   @include rounded(8px);
   margin: $margin;
-  // @if $margin-bottom != null {
-  //   margin-bottom: $margin-bottom;
-  //   &:nth-last-child(-n+#{$arg}) {
-  //     margin-bottom: 0;
-  //   }
-  // }
 }
