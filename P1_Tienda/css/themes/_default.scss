@@ -39,11 +39,27 @@ main {
   height: 800px;
   float: right;
   background: $orange-sec;
-  @include col(1,6);
+  // @include col(1,6);
+}
+.featured-container section {
+  background: $orange;
+}
+
+article {
+  @include rounded(8px);
 }
 
 section h2 {
   background: $orange;
   display: inline;
   @include rounded;
+}
+
+.title:before {
+  content: url(../favicon.ico);
+  vertical-align: middle;
+}
+
+.column {
+border: 0.1rem dashed #cea7e4;
 }

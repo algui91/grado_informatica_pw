@@ -28,3 +28,8 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
+
+/// http://anotheruiguy.roughdraft.io/83ff2c48b3e3a472f7ed-living-life-with-flex-box-and-sass
+@function gutter-value($arg, $gutter) {
+  @return if($gutter, percentage(1 / $arg) - 1%, percentage(1 / $arg))
+}
