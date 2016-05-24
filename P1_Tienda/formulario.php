@@ -27,12 +27,73 @@
         </div>
 
         <div class="main-container">
+
+        <?php
+
+        require_once('config.php');
+
+        // define variables and set to empty values
+        $nameErr = $emailErr = $genderErr = $websiteErr = "";
+        $name = $email = $gender = $comment = $website = "HOLA";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          if (empty($_POST["name"])) {
+            $nameErr = "Name is required";
+          } else {
+            $name = test_input($_POST["name"]);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+              $nameErr = "Only letters and white space allowed";
+            }
+          }
+
+          if (empty($_POST["email"])) {
+            $emailErr = "Email is required";
+          } else {
+            $email = test_input($_POST["email"]);
+            // check if e-mail address is well-formed
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+              $emailErr = "Invalid email format";
+            }
+          }
+
+          if (empty($_POST["website"])) {
+            $website = "";
+          } else {
+            $website = test_input($_POST["website"]);
+            // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+              $websiteErr = "Invalid URL";
+            }
+          }
+
+          if (empty($_POST["comment"])) {
+            $comment = "";
+          } else {
+            $comment = test_input($_POST["comment"]);
+          }
+
+          if (empty($_POST["gender"])) {
+            $genderErr = "Gender is required";
+          } else {
+            $gender = test_input($_POST["gender"]);
+          }
+        }
+
+        function test_input($data) {
+          $data = trim($data);
+          $data = stripslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+        }
+        ?>
+
         <main role="main" class="wrapper">
-					<header class="section-title">
-						<h2>Formulario de suscripción</h2>
-					</header>
+          <header class="section-title">
+            <h2>Formulario de suscripción</h2>
+          </header>
           <section class="flex-container-form">
-              <form class="form-horizontal">
+              <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-horizontal">
               <fieldset>
 
               <!-- Form Name -->
@@ -42,8 +103,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="Nombre">Nombre</label>
                 <div class="col-md-4">
-                <input id="Nombre" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md">
-
+                <input id="Nombre" name="name" type="text" placeholder="Nombre" class="form-control input-md">
                 </div>
               </div>
 
@@ -161,7 +221,7 @@
                     <input type="checkbox" name="toc" id="toc-0" value="1">
                     He leido y acepto las condiciones
                   </label>
-              	</div>
+                </div>
                 </div>
               </div>
 
@@ -175,7 +235,6 @@
 
               </fieldset>
               </form>
-
           </section>
         </main>
         </div><!-- #main-container -->
@@ -186,7 +245,7 @@
               <address>
                 Avda XXXXX, YYYY, Granada, CP: 88888, example@example.com. Webmaster: Alex
               </address>
-              <a href="./formulario.html">Suscribete</a>
+              <a href="./formulario.php">Suscribete</a>
               <h1><a href="./como_se_hizo.pdf">¿Cómo se hizo?</a></h1>
           </footer>
         </div>
