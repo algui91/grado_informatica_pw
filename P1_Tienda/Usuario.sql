@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `nombre` varchar(20) NOT NULL,
   `apellidos` varchar(20) NOT NULL,
   `nombreUsuario` varchar(20) NOT NULL,
-  `contrasena` varchar(20) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
   `direccion` varchar(20) NOT NULL,
   `provincia` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,

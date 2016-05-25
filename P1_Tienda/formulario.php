@@ -16,6 +16,7 @@
 <?php
 
 require_once('db/User.php');
+require_once('lib/password.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
@@ -91,7 +92,7 @@ function test_input($data)
 $u = new User(array(":nombre" => $name,
     ":apellidos" => $lastname,
     ":nombreUsuario" => $username,
-    ":contrasena" => $password,
+    ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
     ":direccion" => $direction,
     ":email" => $email,
     ":dni" => $dni,

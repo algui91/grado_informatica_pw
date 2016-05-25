@@ -1,1 +1,2 @@
 - Aunque solo se pide validación mediante JS, se ha hecho también con PHP, para que exista más seguridad. El motivo es que un atacante puede fácilmente saltarse la validación JS.
+- Se ha usado la libreria de password para hashear la contraseña
