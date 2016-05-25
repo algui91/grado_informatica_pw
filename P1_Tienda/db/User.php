@@ -42,6 +42,7 @@ class User extends DataObject
 
     public function insertUser()
     {
+        $r = false;
         $connection = parent::conectar();
         $sql = 'INSERT INTO ' . USER_TABLE . ' 
             (nombre, apellidos, nombreUsuario, contrasena, direccion, provincia, email, dni, visa, observaciones, ciudad, envio)
@@ -50,9 +51,16 @@ class User extends DataObject
             $st = $connection->prepare($sql);
             $st->execute($this->datos);
         } catch (PDOException $e) {
-            parent::desconectar($connection);
-            die("Consulta fallida: " . $e->getMessage());
+            if ($e->getCode() == 23000) {
+                $r = true;
+            } else {
+                die("Consulta fallida: " . $e->getMessage());
+            }
         }
+        parent::desconectar($connection);
+
+        return $r;
     }
 }
+
 ?>

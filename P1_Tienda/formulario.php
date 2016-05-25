@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if(!empty($_POST["dni"])){
+    if (!empty($_POST["dni"])) {
         $dni = test_input($_POST["dni"]);
     }
 
@@ -67,8 +67,18 @@ function test_input($data)
     return $data;
 }
 
-$u = new User(array(":dni" => $dni));
-$u->insertUser();
+$u = new User(array(":nombre" => $name,
+    ":apellidos" => $lastname,
+    ":nombreUsuario" => $username,
+    ":contrasena" => $password,
+    ":direccion" => $direction,
+    ":email" => $email,
+    ":dni" => $dni,
+    ":visa" => $visa,
+    ":observaciones" => $comment,
+    ":ciudad" => $city));
+
+    $dniIsSet = $u->insertUser();
 ?>
 
 <div class="header-container">
@@ -194,7 +204,7 @@ $u->insertUser();
                             <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
                                    placeholder="DNI"
                                    class="form-control input-md">
-
+                            <?php if ($dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
                         </div>
                     </div>
 
