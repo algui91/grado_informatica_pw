@@ -18,8 +18,8 @@
 require_once('db/User.php');
 
 // define variables and set to empty values
-//    $nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $lastname = $username = $password = $direction = $city = $dni = $visa = $email = $comment = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $nameErr = "Only letters and white space allowed";
         }
     }
-
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
     } else {
@@ -41,17 +40,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $emailErr = "Invalid email format";
         }
     }
-
     if (!empty($_POST["dni"])) {
         $dni = test_input($_POST["dni"]);
     }
-
+    if (!empty($_POST["lastname"])) {
+        $lastname = test_input($_POST["lastname"]);
+    }
+    if (!empty($_POST["username"])) {
+        $username = test_input($_POST["username"]);
+    }
+    if (!empty($_POST["password"])) {
+        $password = test_input($_POST["password"]);
+    }
+    if (!empty($_POST["direction"])) {
+        $direction = test_input($_POST["direction"]);
+    }
+    if (!empty($_POST["city"])) {
+        $city = test_input($_POST["city"]);
+    }
+    if (!empty($_POST["visa"])) {
+        $visa = test_input($_POST["visa"]);
+    }
     if (empty($_POST["comment"])) {
         $comment = "";
     } else {
         $comment = test_input($_POST["comment"]);
     }
-
     if (empty($_POST["gender"])) {
         $genderErr = "Gender is required";
     } else {
@@ -64,6 +78,7 @@ function test_input($data)
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
+
     return $data;
 }
 
@@ -86,7 +101,7 @@ $u = new User(array(":nombre" => $name,
         <h1 class="title"><a href="index.html">Mi Tienda de Música</a></h1>
         <section id="login-container">
             <form action="index.html" method="post">
-                <input type"text" name="username" value="" placeholder="Username">
+                <input type="text" name="username" value="" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <button name="singlebutton">Login</button>
             </form>
