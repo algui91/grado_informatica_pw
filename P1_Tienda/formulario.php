@@ -12,6 +12,59 @@
 </head>
 <body>
 
+
+<?php
+
+require_once('config.php');
+
+// define variables and set to empty values
+//    $nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $lastname = $username = $password = $direction = $city = $dni = $visa = $email = $comment = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $nameErr = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        // check if e-mail address is well-formed
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+
+    if (empty($_POST["comment"])) {
+        $comment = "";
+    } else {
+        $comment = test_input($_POST["comment"]);
+    }
+
+    if (empty($_POST["gender"])) {
+        $genderErr = "Gender is required";
+    } else {
+        $gender = test_input($_POST["gender"]);
+    }
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
+
 <div class="header-container">
     <header class="wrapper">
         <h1 class="title"><a href="index.html">Mi Tienda de Música</a></h1>
@@ -27,69 +80,6 @@
 </div>
 
 <div class="main-container">
-
-    <?php
-
-    require_once('config.php');
-
-    // define variables and set to empty values
-    $nameErr = $emailErr = $genderErr = $websiteErr = "";
-    $name = $email = $gender = $comment = $website = "HOLA";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["name"])) {
-            $nameErr = "Name is required";
-        } else {
-            $name = test_input($_POST["name"]);
-            // check if name only contains letters and whitespace
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-                $nameErr = "Only letters and white space allowed";
-            }
-        }
-
-        if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
-        } else {
-            $email = test_input($_POST["email"]);
-            // check if e-mail address is well-formed
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
-            }
-        }
-
-        if (empty($_POST["website"])) {
-            $website = "";
-        } else {
-            $website = test_input($_POST["website"]);
-            // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
-                $websiteErr = "Invalid URL";
-            }
-        }
-
-        if (empty($_POST["comment"])) {
-            $comment = "";
-        } else {
-            $comment = test_input($_POST["comment"]);
-        }
-
-        if (empty($_POST["gender"])) {
-            $genderErr = "Gender is required";
-        } else {
-            $gender = test_input($_POST["gender"]);
-        }
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-
     <main role="main" class="wrapper">
         <header class="section-title">
             <h2>Formulario de suscripción</h2>
@@ -106,6 +96,7 @@
                         <label class="col-md-4 control-label" for="Nombre">Nombre</label>
                         <div class="col-md-4">
                             <input id="Nombre" name="name" type="text" placeholder="Nombre"
+                                   value="<?php echo $name; ?>"
                                    class="form-control input-md">
                         </div>
                     </div>
@@ -114,7 +105,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Apellidos">Apellidos</label>
                         <div class="col-md-4">
-                            <input id="Apellidos" name="Apellidos" type="text" placeholder="Apellidos"
+                            <input id="Apellidos" name="lastname" type="text" placeholder="Apellido"
+                                   value="<?php echo $lastname; ?>"
                                    class="form-control input-md">
 
                         </div>
@@ -124,8 +116,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Nombre Usuario">Nombre Usuario</label>
                         <div class="col-md-4">
-                            <input id="Nombre Usuario" name="Nombre Usuario" type="password"
-                                   placeholder="Nombre Usuario" class="form-control input-md">
+                            <input id="Nombre Usuario" name="username" type="text"
+                                   placeholder="Nombre Usuario" value="<?php echo $username; ?>"
+                                   class="form-control input-md">
 
                         </div>
                     </div>
@@ -134,7 +127,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Clave">Clave</label>
                         <div class="col-md-4">
-                            <input id="Clave" name="Clave" type="password" placeholder="Clave"
+                            <input id="Clave" name="password" type="password" placeholder="Contraseña"
+                                   value="<?php echo $password; ?>"
                                    class="form-control input-md">
 
                         </div>
@@ -144,8 +138,19 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Dirección Postal">Dirección Postal</label>
                         <div class="col-md-4">
-                            <input id="Dirección Postal" name="Dirección Postal" type="text"
-                                   placeholder="Dirección Postal" class="form-control input-md">
+                            <input id="Dirección Postal" name="direction" type="text"
+                                   placeholder="Dirección postal" value="<?php echo $direction; ?>"
+                                   class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Ciudad">Ciudad</label>
+                        <div class="col-md-4">
+                            <input id="Ciudad" name="city" type="text"
+                                   placeholder="Ciudad" value="<?php echo $city; ?>"
+                                   class="form-control input-md">
 
                         </div>
                     </div>
@@ -169,7 +174,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="email">email</label>
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" placeholder="email"
+                            <input id="email" name="email" type="text" value="<?php echo $email; ?>"
+                                   placeholder="Email"
                                    class="form-control input-md">
 
                         </div>
@@ -179,7 +185,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="DNI">DNI</label>
                         <div class="col-md-4">
-                            <input id="DNI" name="DNI" type="text" placeholder="DNI" class="form-control input-md">
+                            <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
+                                   placeholder="DNI"
+                                   class="form-control input-md">
 
                         </div>
                     </div>
@@ -188,7 +196,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="VISA">VISA</label>
                         <div class="col-md-4">
-                            <input id="VISA" name="VISA" type="text" placeholder="VISA" class="form-control input-md">
+                            <input id="VISA" name="visa" type="text" value="<?php echo $visa; ?>"
+                                   placeholder="VISA"
+                                   class="form-control input-md">
 
                         </div>
                     </div>
@@ -198,7 +208,7 @@
                         <label class="col-md-4 control-label" for="Observaciones">Observaciones</label>
                         <div class="col-md-4">
                             <textarea class="form-control" id="Observaciones"
-                                      name="Observaciones">Observaciones</textarea>
+                                      name="comment"><?php echo $comment; ?></textarea>
                         </div>
                     </div>
 
