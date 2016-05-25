@@ -41,6 +41,7 @@ main {
   background: $orange-sec;
   // @include col(1,6);
 }
+
 .featured-container section {
   background: $orange;
 }
@@ -61,5 +62,5 @@ section h2 {
 }
 
 .column {
-border: 0.1rem dashed #cea7e4;
+  border: 0.1rem dashed #cea7e4;
 }

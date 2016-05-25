@@ -9,14 +9,14 @@ main {
     }
 
     article {
-      @include flex-grid-item($grow:1);
+      @include flex-grid-item($grow: 1);
     }
   }
 
   #left-column {
     @include respond-to('large') {
       flex-basis: 70%;
-   }
+    }
   }
 
   // .left-column-disc {
@@ -48,40 +48,40 @@ main {
     @include rounded(8px);
   }
 
-	.featured-container{
-		@include flex-grid-container('column wrap');
-		@include respond-to('small') {
+  .featured-container {
+    @include flex-grid-container('column wrap');
+    @include respond-to('small') {
       @include flex-grid-container('row wrap');
     }
 
-		section {
-	    color: white;
-			@include flex-grid-item($basis:49%);
-		}
-	}
+    section {
+      color: white;
+      @include flex-grid-item($basis: 49%);
+    }
+  }
 
-	.genrenews-container {
+  .genrenews-container {
     h2 {
       margin-top: 0;
     }
-		@include flex-grid-container('column nowrap');
+    @include flex-grid-container('column nowrap');
     height: 15em;
     overflow: scroll;
     flex-grow: 1;
-	}
+  }
 
-  #latest-row{
+  #latest-row {
     flex-basis: 100%;
   }
 
   .latest-container {
-		@include flex-grid-container('column nowrap');
-		@include respond-to('small') {
+    @include flex-grid-container('column nowrap');
+    @include respond-to('small') {
       @include flex-grid-container('row nowrap');
     }
-		article {
-			@include flex-grid-item(100%);
-		}
+    article {
+      @include flex-grid-item(100%);
+    }
   }
   .flex-container {
     @include flex-grid-container('row wrap');
@@ -145,16 +145,16 @@ main {
     }
   }
   .section-title h2 {
-      font-size: 2em;
-      padding: .5em;
-			display: block;
+    font-size: 2em;
+    padding: .5em;
+    display: block;
   }
-	.section-title h2:before {
-	  content: url(../favicon.ico);
-	}
+  .section-title h2:before {
+    content: url(../favicon.ico);
+  }
 }
 
-.rowParent, .columnParent{
+.rowParent, .columnParent {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -163,11 +163,11 @@ main {
   align-items: stretch;
 }
 
-.columnParent{
+.columnParent {
   flex-direction: column;
 }
 
-.flexChild{
+.flexChild {
   flex: 1;
   align-self: auto;
 }

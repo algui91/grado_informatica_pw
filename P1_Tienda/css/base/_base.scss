@@ -38,7 +38,6 @@ textarea {
   resize: vertical;
 }
 
-
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
@@ -48,9 +47,9 @@ textarea {
   margin: 0 5%;
   @include clearfix;
   @include respond-to('large') {
-      width: 1026px;
-      /* 1140px - 10% for margins */
-      margin: 0 auto;
+    width: 1026px;
+    /* 1140px - 10% for margins */
+    margin: 0 auto;
   }
 }
 
@@ -73,47 +72,53 @@ main {
 //   /* ====================
 //       WIDE: CSS3 Effects
 //      ==================== */
-  .header-container {
+.header-container {
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+  box-shadow: 0 5px 10px #aaa;
+}
+
+main {
+  aside, article {
     -webkit-box-shadow: 0 5px 10px #aaa;
     -moz-box-shadow: 0 5px 10px #aaa;
     box-shadow: 0 5px 10px #aaa;
   }
-  main {
-    aside, article {
-      -webkit-box-shadow: 0 5px 10px #aaa;
-      -moz-box-shadow: 0 5px 10px #aaa;
-      box-shadow: 0 5px 10px #aaa;
-    }
-  }
-  /* ============
-      WIDE: Menu
-     ============ */
-  .title {
-    float: left;
-  }
-  /* ============
-      WIDE: Main
-     ============ */
-  main {
-    aside {
-      float: right;
-      width: 28%;
-    }
-  }
+}
 
-  figure {
-    margin: 0;
-  }
+/* ============
+    WIDE: Menu
+   ============ */
+.title {
+  float: left;
+}
 
-  .row-nowrap {
-    @include flex-grid-container('row nowrap');
+/* ============
+    WIDE: Main
+   ============ */
+main {
+  aside {
+    float: right;
+    width: 28%;
   }
-  .row-wrap {
-    @include flex-grid-container('row wrap');
-  }
-  .col-nowrap {
-    @include flex-grid-container('column nowrap');
-  }
-  .col-wrap {
-    @include flex-grid-container('column wrap');
-  }
+}
+
+figure {
+  margin: 0;
+}
+
+.row-nowrap {
+  @include flex-grid-container('row nowrap');
+}
+
+.row-wrap {
+  @include flex-grid-container('row wrap');
+}
+
+.col-nowrap {
+  @include flex-grid-container('column nowrap');
+}
+
+.col-wrap {
+  @include flex-grid-container('column wrap');
+}

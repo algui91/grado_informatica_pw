@@ -22,15 +22,19 @@
 @mixin row-top {
 	align-items: flex-start;
 }
+
 @mixin row-bottom {
 	align-items: flex-end;
 }
+
 @mixin row-center {
 	align-items: center;
 }
+
 @mixin row-stretch {
 	align-items: stretch;
 }
+
 @mixin row-baseline {
 	align-items: baseline;
 }

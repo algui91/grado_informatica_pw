@@ -2,10 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-
-
 /// Regular font family
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
@@ -20,33 +16,26 @@ $text-color: rgb(34, 34, 34) !default;
 
 /// Main brand color
 /// @type Color
-$orange: rgb(228,77,38) !default;
+$orange: rgb(228, 77, 38) !default;
 
 /// Light grey
 /// @type Color
-$orange-sec: rgb(241,101,41) !default;
-
+$orange-sec: rgb(241, 101, 41) !default;
 
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 /// @see {mixin} respond-to
 $breakpoints: (
-  'small': (min-width: 480px),
-  'medium': (min-width: 768px),
-  'large': (min-width: 1024px),
-  'xlarge': (min-width: 1140px),
+        'small': (min-width: 480px),
+        'medium': (min-width: 768px),
+        'large': (min-width: 1024px),
+        'xlarge': (min-width: 1140px),
 ) !default;
-
-
-
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

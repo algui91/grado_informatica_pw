@@ -14,15 +14,19 @@
 @mixin column-top {
 	align-self: flex-start;
 }
+
 @mixin column-bottom {
 	align-self: flex-end;
 }
+
 @mixin column-center {
 	align-self: center;
 }
+
 @mixin column-stretch {
 	align-self: stretch;
 }
+
 @mixin column-baseline {
 	align-self: baseline;
 }
@@ -32,6 +36,7 @@
 	flex: 0 0 $percent;
 	max-width: $percent;
 }
+
 @mixin column-offset($percent) {
 	margin-left: $percent;
 }

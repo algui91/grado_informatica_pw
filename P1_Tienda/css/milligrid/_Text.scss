@@ -30,6 +30,7 @@ body {
 a:link, a:visited, a:hover, a:active {
 	color: $highlight-color;
 }
+
 a:hover {
 	text-decoration: none;
 }
@@ -44,26 +45,32 @@ h1 {
 	margin: 2.4rem 0 - $gutter-width 2.3rem 0 - $gutter-width;
 	padding: 0 $gutter-width;
 }
+
 h2, h3, h4, h5, h6 {
 	display: inline-block; // Prevent margins collapsing.
 	min-width: 100%;
 }
+
 h2 {
 	margin-top: 1.3rem;
 	font-size: 2.2rem;
 }
+
 h3 {
 	margin-top: 1.6rem;
 	font-size: 2rem;
 }
+
 h4 {
 	margin-top: 2rem;
 	font-size: 1.8rem;
 }
+
 h5 {
 	margin-top: 2.3rem;
 	font-size: 1.6rem;
 }
+
 h6 {
 	margin-top: 1.3rem;
 	font-size: 1.4rem;
@@ -82,24 +89,26 @@ ul {
 	background-color: $text-color;
 	color: $shaded-background-color;
 }
+
 code {
 	@include code-font;
-	
+
 	font-size: 1.3rem;
 	padding: 0 0.2rem;
 	border-radius: 0.3rem;
 }
-pre{
+
+pre {
 	@include code-font;
-	
+
 	display: block;
 	border-radius: 1rem;
 	margin-left: -$gutter-width;
 	margin-right: -$gutter-width;
-	
+
 	code {
 		@include code-font;
-		
+
 		font-size: 1.5rem;
 		display: block;
 		padding: 2.4rem;
