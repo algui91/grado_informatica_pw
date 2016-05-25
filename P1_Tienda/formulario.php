@@ -19,7 +19,7 @@ require_once('db/User.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
-$lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
+$province = $lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -42,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (!empty($_POST["dni"])) {
         $dni = test_input($_POST["dni"]);
+    }
+    if (!empty($_POST["province"])) {
+        $province = test_input($_POST["province"]);
     }
     if (!empty($_POST["lastname"])) {
         $lastname = test_input($_POST["lastname"]);
@@ -91,9 +94,10 @@ $u = new User(array(":nombre" => $name,
     ":dni" => $dni,
     ":visa" => $visa,
     ":observaciones" => $comment,
-    ":ciudad" => $city));
+    ":ciudad" => $city,
+    ":provincia" => $province));
 
-    $dniIsSet = $u->insertUser();
+$dniIsSet = $u->insertUser();
 ?>
 
 <div class="header-container">
@@ -190,17 +194,28 @@ $u = new User(array(":nombre" => $name,
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Provicia">Provicia</label>
                         <div class="col-md-4">
-                            <select id="Provicia" name="Provicia" class="form-control">
-                                <option value="1">Granada</option>
-                                <option value="2">Almeria</option>
-                                <option value="3">Huelva</option>
-                                <option value="4">Sevilla</option>
-                                <option value="5">Cádiz</option>
-                                <option value="6">Malaga</option>
+                            <select id="Provicia" name="province" class="form-control">
+                                <option <?php if (isset($province) && $province == 1) echo "selected"; ?> value="1">
+                                    Granada
+                                </option>
+                                <option <?php if (isset($province) && $province == 2) echo "selected"; ?> value="2">
+                                    Almeria
+                                </option>
+                                <option <?php if (isset($province) && $province == 3) echo "selected"; ?> value="3">
+                                    Huelva
+                                </option>
+                                <option <?php if (isset($province) && $province == 4) echo "selected"; ?> value="4">
+                                    Sevilla
+                                </option>
+                                <option <?php if (isset($province) && $province == 5) echo "selected"; ?> value="5">
+                                    Cádiz
+                                </option>
+                                <option <?php if (isset($province) && $province == 6) echo "selected"; ?> value="6">
+                                    Malaga
+                                </option>
                             </select>
                         </div>
                     </div>
-
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="email">email</label>
