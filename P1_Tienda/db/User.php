@@ -37,7 +37,7 @@ class User extends DataObject
         ":visa" => "",
         ":observaciones" => "",
         ":ciudad" => "",
-        ":envio" => "",
+        ":newsletter" => "",
     );
 
     public function insertUser()
@@ -46,7 +46,7 @@ class User extends DataObject
         $connection = parent::conectar();
         $sql = 'INSERT INTO ' . USER_TABLE . ' 
             (nombre, apellidos, nombreUsuario, contrasena, direccion, provincia, email, dni, visa, observaciones, ciudad, envio)
-            VALUES (:nombre, :apellidos, :nombreUsuario, :contrasena, :direccion, :provincia, :email, :dni, :visa, :observaciones, :ciudad, :envio)';
+            VALUES (:nombre, :apellidos, :nombreUsuario, :contrasena, :direccion, :provincia, :email, :dni, :visa, :observaciones, :ciudad, :newsletter)';
         try {
             $st = $connection->prepare($sql);
             $st->execute($this->datos);

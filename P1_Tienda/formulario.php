@@ -19,7 +19,7 @@ require_once('db/User.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
-$province = $lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
+$newsletter = $province = $lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -42,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (!empty($_POST["dni"])) {
         $dni = test_input($_POST["dni"]);
+    }
+    if (!empty($_POST["newsletter"])) {
+        $newsletter = test_input($_POST["newsletter"]);
     }
     if (!empty($_POST["province"])) {
         $province = test_input($_POST["province"]);
@@ -95,7 +98,8 @@ $u = new User(array(":nombre" => $name,
     ":visa" => $visa,
     ":observaciones" => $comment,
     ":ciudad" => $city,
-    ":provincia" => $province));
+    ":provincia" => $province,
+    ":newsletter" => $newsletter));
 
 $dniIsSet = $u->insertUser();
 ?>
@@ -260,18 +264,19 @@ $dniIsSet = $u->insertUser();
 
                     <!-- Multiple Radios (inline) -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="Envío">Envio</label>
+                        <label class="col-md-4 control-label" for="newsletter">Envio</label>
                         <div class="col-md-4">
+                            <?php var_dump($newsletter); var_dump($province);?>
                             <label class="radio-inline" for="Envío-0">
-                                <input type="radio" name="Envío" id="Envío-0" value="1" checked="checked">
+                                <input type="radio" name="newsletter" id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?> value="1" >
                                 Mensual
                             </label>
                             <label class="radio-inline" for="Envío-1">
-                                <input type="radio" name="Envío" id="Envío-1" value="2">
+                                <input type="radio" name="newsletter" id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?> value="2">
                                 Semanal
                             </label>
                             <label class="radio-inline" for="Envío-2">
-                                <input type="radio" name="Envío" id="Envío-2" value="3">
+                                <input type="radio" name="newsletter" id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?> value="3">
                                 Diario
                             </label>
                         </div>
