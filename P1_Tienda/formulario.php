@@ -15,7 +15,7 @@
 
 <?php
 
-require_once('config.php');
+require_once('db/User.php');
 
 // define variables and set to empty values
 //    $nameErr = $emailErr = $genderErr = $websiteErr = "";
@@ -42,6 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    if(!empty($_POST["dni"])){
+        $dni = test_input($_POST["dni"]);
+    }
+
     if (empty($_POST["comment"])) {
         $comment = "";
     } else {
@@ -63,6 +67,8 @@ function test_input($data)
     return $data;
 }
 
+$u = new User(array(":dni" => $dni));
+$u->insertUser();
 ?>
 
 <div class="header-container">

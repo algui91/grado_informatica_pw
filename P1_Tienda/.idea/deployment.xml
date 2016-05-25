@@ -5,7 +5,7 @@
       <paths name="SFTP">
         <serverdata>
           <mappings>
-            <mapping deploy="/P1_Tienda" local="$PROJECT_DIR$" web="" />
+            <mapping deploy="/P1_Tienda" local="$PROJECT_DIR$" web="~x76625397/P1_Tienda" />
           </mappings>
         </serverdata>
       </paths>
