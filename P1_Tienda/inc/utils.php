@@ -26,18 +26,40 @@ function test_input($data)
 
 function login_form()
 {
+    session_start();
+    if (isset($_SESSION['logged_user'])) {
+        ?>
+        <div class="header-container">
+            <header class="wrapper">
+                <h1 class="title"><a href="index.php"> La tienda de música
+                        de <?php echo $_SESSION['logged_user']; ?></a></h1>
+                <section id="login-container">
+                    <form action="login.php" method="post">
+                        <button name="logout">Log out</button>
+                        <input type="hidden" name="logout" value="logout">
+                    </form>
+                </section>
+            </header>
+        </div>
+        <?php
+
+    } else {
+        ?>
+        <div class="header-container">
+            <header class="wrapper">
+                <h1 class="title"><a href="index.php"> Mi Tienda de Música </a></h1>
+                <section id="login-container">
+                    <form action="login.php" method="post">
+                        <input type="text" name="username" value="" placeholder="Username">
+                        <input type="password" name="password" placeholder="Password">
+                        <button name="singlebutton"> Login</button>
+                    </form>
+                    <?php if (isset($_SESSION['incorrect_password'])) echo $_SESSION['incorrect_password']; ?>
+                </section>
+            </header>
+        </div>
+        <?php
+    }
     ?>
-    <div class="header-container">
-        <header class="wrapper">
-            <h1 class="title"><a href="index.php"> Mi Tienda de Música </a></h1>
-            <section id="login-container">
-                <form action="login.php" method="post">
-                    <input type="text" name="username" value="" placeholder="Username">
-                    <input type="password" name="password" placeholder="Password">
-                    <button name="singlebutton"> Login</button>
-                </form>
-            </section>
-        </header>
-    </div>
     <?php
 }

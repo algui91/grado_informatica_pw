@@ -17,15 +17,35 @@
 
 require_once("inc/utils.php");
 require_once('db/User.php');
+require_once('lib/password.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = new User(array(":nombreUsuario" => test_input($_POST["username"])));
-    var_dump($user->getUser());
 
-//    if (password_verify(test_input($_POST["password"]), $hash)) {
-//        /* Valid */
-//    } else {
-//        /* Invalid */
-//    }
+    session_start();
+
+    if (isset($_POST["logout"])) {
+        $_SESSION = array();
+        session_destroy();
+        header("location: index.php");
+    } else {
+
+        $user = new User(array(":nombreUsuario" => test_input($_POST["username"])));
+
+        if (($loginResult = $user->getUser()) != false) {
+
+            $realHash = $loginResult["contrasena"];
+
+            if (password_verify(test_input($_POST["password"]), $realHash)) {
+                session_start([
+                    'cookie_lifetime' => 86400 * 7, // Session lasts for 7 days
+                ]);
+                $_SESSION['logged_user'] = $loginResult["nombreUsuario"];
+                header("location: index.php");
+            } else {
+                $_SESSION['incorrect_password'] = "Usuario o contraseña incorrectos";
+                header("location: index.php");
+            }
+        }
+    }
 }
 ?>
