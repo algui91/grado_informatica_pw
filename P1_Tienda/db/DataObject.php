@@ -27,12 +27,12 @@ abstract class DataObject
 {
     protected $datos = array();
 
-    public function __construct($datos)
+    public function __construct($datos = null)
     {
-//        var_dump($datos);
-//        exit(0);
-        foreach ($datos as $clave => $valor)
-            if (array_key_exists($clave, $this->datos)) $this->datos[$clave] = $valor;
+        if ($datos != null) {
+            foreach ($datos as $clave => $valor)
+                if (array_key_exists($clave, $this->datos)) $this->datos[$clave] = $valor;
+        }
     }
 
     public function devolverValor($campo)

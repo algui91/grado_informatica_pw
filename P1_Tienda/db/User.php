@@ -61,6 +61,25 @@ class User extends DataObject
 
         return $r;
     }
+
+    public function getUser()
+    {
+        $connection = parent::conectar();
+        $sql = "SELECT nombreUsuario, contrasena FROM " . USER_TABLE . ' WHERE nombreUsuario = :username';
+        $result = false;
+
+        try {
+            $st = $connection->prepare($sql);
+            $st->bindValue(":username", $this->datos[":nombreUsuario"]);
+            $st->execute();
+            $st->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $st->fetch();
+        } catch (PDOException $e) {
+            die("Consulta fallida: " . $e->getMessage());
+        }
+
+        return $result;
+    }
 }
 
 ?>

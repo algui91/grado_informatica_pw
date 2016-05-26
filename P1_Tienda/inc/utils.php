@@ -15,6 +15,15 @@
  * limitations under the License.
  */
 
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+
+    return $data;
+}
+
 function login_form()
 {
     ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 24, 2016 at 07:31 PM
+-- Generation Time: May 26, 2016 at 10:23 AM
 -- Server version: 5.5.47-MariaDB
 -- PHP Version: 5.4.16
 
@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 -- Indexes for table `Usuario`
 --
 ALTER TABLE `Usuario`
-  ADD PRIMARY KEY (`dni`);
+  ADD PRIMARY KEY (`dni`),
+  ADD UNIQUE KEY `nombreUsuario` (`nombreUsuario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

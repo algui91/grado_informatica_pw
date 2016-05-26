@@ -81,15 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-
-    return $data;
-}
-
 $u = new User(array(":nombre" => $name,
     ":apellidos" => $lastname,
     ":nombreUsuario" => $username,
