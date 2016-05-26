@@ -12,19 +12,10 @@
 </head>
 <body>
 
-<div class="header-container">
-    <header class="wrapper row-nowrap">
-        <h1 class="title">Mi Tienda de Música</h1>
-        <section id="login-container">
-            <form action="index.html" method="post">
-                <input type"text" name="username" value="" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button name="singlebutton">Login</button>
-            </form>
-        </section>
-    </header>
-
-</div>
+<?php
+require_once('inc/utils.php');
+login_form();
+?>
 
 <div class="main-container">
     <!-- <aside class="ad">
@@ -77,7 +68,7 @@
                 </article>
             </section>
             <section id="left-column">
-                <h2>Secciones | Generos: <a href="epic.html">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
+                <h2>Secciones | Generos: <a href="epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
                 <div class="featured-container">
                     <section>
                         <header>

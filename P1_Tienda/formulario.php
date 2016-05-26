@@ -17,6 +17,7 @@
 
 require_once('db/User.php');
 require_once('lib/password.php');
+require_once('inc/utils.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
@@ -105,19 +106,7 @@ $u = new User(array(":nombre" => $name,
 $dniIsSet = $u->insertUser();
 ?>
 
-<div class="header-container">
-    <header class="wrapper">
-        <h1 class="title"><a href="index.html">Mi Tienda de Música</a></h1>
-        <section id="login-container">
-            <form action="index.html" method="post">
-                <input type="text" name="username" value="" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button name="singlebutton">Login</button>
-            </form>
-        </section>
-    </header>
-
-</div>
+<?php login_form(); ?>
 
 <div class="main-container">
     <main role="main" class="wrapper">

@@ -8,129 +8,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 
-<div class="header-container">
-    <header class="wrapper">
-        <h1 class="title"><a href="./index.html">Mi Tienda de Música</a></h1>
-        <section id="login-container">
-            <form action="index.html" method="post">
-                <input type"text" name="username" value="" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button name="singlebutton">Login</button>
-            </form>
-        </section>
-    </header>
-
-</div>
+<?php
+require_once('../inc/utils.php');
+login_form();
+?>
 
 <div class="main-container">
     <main role="main" class="wrapper">
+        <h2>Secciones | Generos: <a href="../epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
         <header class="section-title">
             <h2>Sección de EPIC</h2>
         </header>
+        <header>
+            <h1>DECIMUS</h1>
+        </header>
         <div class="flex-container-epic">
-            <div class="left-column">
-
-                <article class="best-seller">
-                    <figure>
-                        <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px" width="256px"/>
-                    </figure>
-                    <header>
-                        <h1>Decimus</h1>
-                    </header>
-                    <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a></p>
-                    <p>15 Comentarios</p>
+            <div class="left-column-disc">
+                <article class="disc-contents">
+                    <div class="disc-left">
+                        <h1>Audiomachine</h1>
+                        <figure>
+                            <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="512px"
+                                 width="512"/>
+                        </figure>
+                        <p>Genero</p>
+                        <p>Precio</p>
+                        <p>Productora</p>
+                        <p>Valoración</p>
+                    </div>
+                    <div class="disc-right">
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <audio controls="controls">
+                            <source src="song.mp3" type="audio/mp3"/>
+                            <source src="song.ogg" type="audio/ogg"/>
+                            Your browser does not support the audio tag.
+                        </audio>
+                        <div class="row-nowrap">
+                            <p>Comentarios</p>
+                            <p>Comprar</p>
+                            <p>Reproducir</p>
+                        </div>
+                    </div>
                 </article>
-                <div class="featured-epic">
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                    <article class="other-discs">
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"
-                                 width="128px"/>
-                        </figure>
-                        <header>
-                            <h3>Disco 1</h3>
-                        </header>
-                        <p>Comentarios
-                        <p>
-                        <p><a href="./epic/decimus_20161008.html" title="Ver Decimus">Ver</a>
-                        <p>
-                    </article>
-                </div>
             </div>
-            <section class="newer">
+            <section class="more-discs">
                 <article>
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -150,7 +124,7 @@
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -170,7 +144,7 @@
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -190,7 +164,7 @@
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -210,7 +184,7 @@
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -230,7 +204,27 @@
                     <div class="flexChild rowParent">
                         <div class="flexChild">
                             <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
+                                     width="64px"/>
+                            </figure>
+                        </div>
+                        <div class="flexChild columnParent">
+                            <div class="flexChild">Disco</div>
+                            <div class="flexChild columnParent">
+                                <div class="flexChild rowParent">
+                                    <div class="flexChild">Autor</div>
+                                    <div class="flexChild">Reproducir</div>
+                                </div>
+                                <div class="flexChild">Ver</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="flexChild rowParent">
+                        <div class="flexChild">
+                            <figure>
+                                <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
                                      width="64px"/>
                             </figure>
                         </div>
@@ -257,8 +251,7 @@
         <address>
             Avda XXXXX, YYYY, Granada, CP: 88888, example@example.com. Webmaster: Alex
         </address>
-        <a href="./formulario.php">Suscribete</a>
-        <h1><a href="./como_se_hizo.pdf">¿Cómo se hizo?</a></h1>
+        <a href="../formulario.php">Suscribete</a>
     </footer>
 </div>
 </body>
