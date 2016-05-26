@@ -247,7 +247,6 @@ $dniIsSet = $u->insertUser();
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="newsletter">Envio</label>
                         <div class="col-md-4">
-                            <?php var_dump($newsletter); var_dump($province);?>
                             <label class="radio-inline" for="Envío-0">
                                 <input type="radio" name="newsletter" id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?> value="1" >
                                 Mensual
