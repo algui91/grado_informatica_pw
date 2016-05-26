@@ -31,7 +31,7 @@ function login_form()
         ?>
         <div class="header-container">
             <header class="wrapper">
-                <h1 class="title"><a href="/index.php"> La tienda de música
+                <h1 class="title"><a href="/~x76625397/tiendamusicaII/"> La tienda de música
                         de <?php echo $_SESSION['logged_user']; ?></a></h1>
                 <section id="login-container">
                     <form action="login.php" method="post">
