@@ -14,6 +14,7 @@
 
 <?php
 require_once('inc/utils.php');
+require_once('db/Disc.php');
 login_form();
 ?>
 
@@ -24,7 +25,6 @@ login_form();
         </header>
         <div class="flex-container-epic">
             <div class="left-column">
-
                 <article class="best-seller">
                     <figure>
                         <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px" width="256px"/>
@@ -36,6 +36,12 @@ login_form();
                     <p>15 Comentarios</p>
                 </article>
                 <div class="featured-epic">
+
+                    <?php
+                        $discs = new Disc();
+//                        var_dump($discs->getAllDiscs());
+                    ?>
+
                     <article class="other-discs">
                         <figure>
                             <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="128px"

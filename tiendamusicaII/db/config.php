@@ -19,4 +19,5 @@ define("DB_DSN", "mysql:host=localhost;dbname=db76625397");
 define("DB_USER", "x76625397");
 define("DB_PASS", "x76625397");
 define("USER_TABLE", "Usuario");
+define("DISC_TABLE", "Disco");
 ?>
