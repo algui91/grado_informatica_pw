@@ -25,20 +25,23 @@ login_form();
         </header>
         <div class="flex-container-epic">
             <div class="left-column">
+                <?php
+                $discs = new Disc();
+                $data = $discs->getAllDiscs(); // TODO, get only title, add photo, check not empty
+                ?>
                 <article class="best-seller">
                     <figure>
                         <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px" width="256px"/>
                     </figure>
                     <header>
-                        <h1>Decimus</h1>
+                        <h1><?php echo $data[0]['titulo']; ?></h1>
                     </header>
                     <p><a href="epic/decimus_20161008.php" title="Ver Decimus">Ver</a></p>
                     <p>15 Comentarios</p>
                 </article>
                 <div class="featured-epic">
                     <?php
-                    $discs = new Disc();
-                    $data = $discs->getAllDiscs(); // TODO, get only title, add photo
+                    unset($data[0]);
                     foreach ($data as $item) {
                         ?>
                         <article class="other-discs">

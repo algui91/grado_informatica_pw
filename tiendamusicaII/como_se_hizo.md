@@ -2,3 +2,4 @@
 - Se ha usado la libreria de password para hashear la contraseña
 - Se han usado funciones para reutilzar codigo html
 - Para la sessión se ha usado session_Start
+- Se ha iterado sobre colecciones para crear la página

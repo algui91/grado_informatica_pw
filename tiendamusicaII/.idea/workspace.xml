@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f73a548b-c6b5-4f1d-8411-285d170f9a07" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/como_se_hizo.md" afterPath="$PROJECT_DIR$/como_se_hizo.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/epic.php" afterPath="$PROJECT_DIR$/epic.php" />
     </list>
     <ignored path="P1_Tienda.iws" />
@@ -37,8 +39,25 @@
       <file leaf-file-name="epic.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/epic.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+            <state relative-caret-position="414">
+              <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+              <folding>
+                <marker date="1464352761119" expanded="true" signature="1690:1732" ph="..." />
+                <marker date="1464352761119" expanded="true" signature="1929:1978" ph="..." />
+                <marker date="1464352761119" expanded="true" signature="2243:2423" ph="..." />
+                <marker date="1464352761119" expanded="true" signature="2549:2585" ph="..." />
+                <marker date="1464352761119" expanded="true" signature="2700:2746" ph="..." />
+                <marker date="1464352761119" expanded="true" signature="3867:3973" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="como_se_hizo.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/como_se_hizo.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -89,11 +108,11 @@
         <option value="$PROJECT_DIR$/db/DataObject.php" />
         <option value="$PROJECT_DIR$/db/User.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/como_se_hizo.md" />
         <option value="$PROJECT_DIR$/inc/utils.php" />
         <option value="$PROJECT_DIR$/formulario.php" />
         <option value="$PROJECT_DIR$/db/config.php" />
         <option value="$PROJECT_DIR$/db/Disc.php" />
+        <option value="$PROJECT_DIR$/como_se_hizo.md" />
         <option value="$PROJECT_DIR$/epic.php" />
       </list>
     </option>
@@ -592,7 +611,7 @@
       <workItem from="1464250405407" duration="12623000" />
       <workItem from="1464274372655" duration="233000" />
       <workItem from="1464274952238" duration="2007000" />
-      <workItem from="1464345754357" duration="4688000" />
+      <workItem from="1464345754357" duration="6168000" />
     </task>
     <task id="LOCAL-00001" summary="Sanatize all form's variables">
       <created>1464200350187</created>
@@ -633,7 +652,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40536000" />
+    <option name="totallyTimeSpent" value="42016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
@@ -967,13 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/como_se_hizo.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-845">
@@ -1046,11 +1058,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/como_se_hizo.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/epic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="414">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <marker date="1464352761119" expanded="true" signature="1690:1732" ph="..." />
+            <marker date="1464352761119" expanded="true" signature="1929:1978" ph="..." />
+            <marker date="1464352761119" expanded="true" signature="2243:2423" ph="..." />
+            <marker date="1464352761119" expanded="true" signature="2549:2585" ph="..." />
+            <marker date="1464352761119" expanded="true" signature="2700:2746" ph="..." />
+            <marker date="1464352761119" expanded="true" signature="3867:3973" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
