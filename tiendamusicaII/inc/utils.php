@@ -50,8 +50,8 @@ function header_login()
                 <h1 class="title"><a href="/~x76625397/tiendamusicaII/"> Mi Tienda de Música </a></h1>
                 <section id="login-container">
                     <form action="/~x76625397/tiendamusicaII/login.php" method="post">
-                        <input type="text" name="username" value="" placeholder="Username">
-                        <input type="password" name="password" placeholder="Password">
+                        <input type="text" name="username" value="" placeholder="Username" required>
+                        <input type="password" name="password" placeholder="Password" required>
                         <button name="singlebutton"> Login</button>
                     </form>
                     <?php if (isset($_SESSION['incorrect_password'])) echo $_SESSION['incorrect_password']; ?>
