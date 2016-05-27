@@ -25,7 +25,7 @@ $newsletter = $province = $lastname = $username = $password = $direction = $city
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
-        $nameErr = "Name is required";
+        $nameErr = "Name is required"; // TODO
     } else {
         $name = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
@@ -79,22 +79,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $gender = test_input($_POST["gender"]);
     }
+
+    if (!empty($dni)) {
+        $u = new User(array(":nombre" => $name,
+            ":apellidos" => $lastname,
+            ":nombreUsuario" => $username,
+            ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
+            ":direccion" => $direction,
+            ":email" => $email,
+            ":dni" => $dni,
+            ":visa" => $visa,
+            ":observaciones" => $comment,
+            ":ciudad" => $city,
+            ":provincia" => $province,
+            ":newsletter" => $newsletter));
+
+        $dniIsSet = $u->insertUser();
+        $dni = "";
+    }
 }
-
-$u = new User(array(":nombre" => $name,
-    ":apellidos" => $lastname,
-    ":nombreUsuario" => $username,
-    ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
-    ":direccion" => $direction,
-    ":email" => $email,
-    ":dni" => $dni,
-    ":visa" => $visa,
-    ":observaciones" => $comment,
-    ":ciudad" => $city,
-    ":provincia" => $province,
-    ":newsletter" => $newsletter));
-
-$dniIsSet = $u->insertUser();
 ?>
 
 <?php header_login(); ?>
@@ -219,7 +222,7 @@ $dniIsSet = $u->insertUser();
                             <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
                                    placeholder="DNI"
                                    class="form-control input-md">
-                            <?php if ($dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
+                            <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
                         </div>
                     </div>
 
@@ -248,15 +251,21 @@ $dniIsSet = $u->insertUser();
                         <label class="col-md-4 control-label" for="newsletter">Envio</label>
                         <div class="col-md-4">
                             <label class="radio-inline" for="Envío-0">
-                                <input type="radio" name="newsletter" id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?> value="1" >
+                                <input type="radio" name="newsletter"
+                                       id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?>
+                                       value="1">
                                 Mensual
                             </label>
                             <label class="radio-inline" for="Envío-1">
-                                <input type="radio" name="newsletter" id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?> value="2">
+                                <input type="radio" name="newsletter"
+                                       id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?>
+                                       value="2">
                                 Semanal
                             </label>
                             <label class="radio-inline" for="Envío-2">
-                                <input type="radio" name="newsletter" id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?> value="3">
+                                <input type="radio" name="newsletter"
+                                       id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?>
+                                       value="3">
                                 Diario
                             </label>
                         </div>
