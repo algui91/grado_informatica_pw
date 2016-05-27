@@ -89,8 +89,28 @@ function comment_form($id)
         $comment = "";
     }
     ?>
+    <h1>Comentarios</h1>
+    <!--        En cada comentario aparecerá la hora y el día, el nombre de usuario, y el propio
+    texto del usuario-->
+    <?php
+    $allComments = new Comment();
+
+    foreach ($allComments->getAllCommentsForDisc($id) as $item) {
+        ?>
+        <section id="comment_section">
+            <header id="comment_header">
+                <p><?php echo $item['nombre'] . " el " . $item['fecha'] . " comentó:"; ?></p>
+            </header>
+            <section>
+                <p><?php echo $item['comentario']; ?></p>
+            </section>
+        </section>
+        <?php
+    }
+
+    ?>
+    <h1>Dejanos un comentario</h1>
     <section id="comment_form">
-        <h1>Comentarios</h1>
         <span><?php if (!empty($commentError)) echo $commentError; ?></span>
         <div>
             <textarea rows="10" name="comment" id="comment" placeholder="Comentario"></textarea>
