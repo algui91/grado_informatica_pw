@@ -60,9 +60,7 @@ class Disc extends DataObject
             $stmt = $connection->prepare($sql);
             $stmt->execute();
 
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-            return $stmt->fetchAll();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
