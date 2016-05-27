@@ -18,14 +18,25 @@ require_once('../db/Comment.php');
 
 header_login();
 
+function search($data, $id)
+{
+    foreach ($data as $disc) {
+        if ($disc['id'] === $id)
+            return $disc;
+    }
+}
+
 if (isset($_SESSION['data'])) {
     $data = $_SESSION['data'];
     $id = $_GET['id'];
-    $title = $data[$id]['titulo'];
-    $gender = $data[$id]['genero'];
-    $price = $data[$id]['precio'];
-    $discografy = $data[$id]['productora'];
-    $rating = $data[$id]['valoracion'];
+
+    $current_disc = search($data, $id);
+
+    $title = $current_disc['titulo'];
+    $gender = $current_disc['genero'];
+    $price = $current_disc['precio'];
+    $discografy = $current_disc['productora'];
+    $rating = $current_disc['valoracion'];
 }
 ?>
 <div class="main-container">

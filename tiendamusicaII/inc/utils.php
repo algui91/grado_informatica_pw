@@ -34,7 +34,7 @@ function header_login()
                 <h1 class="title"><a href="/~x76625397/tiendamusicaII/"> La tienda de música
                         de <?php echo $_SESSION['logged_user']; ?></a></h1>
                 <section id="login-container">
-                    <form action="login.php" method="post">
+                    <form action="/~x76625397/tiendamusicaII/login.php" method="post">
                         <button name="logout">Log out</button>
                         <input type="hidden" name="logout" value="logout">
                     </form>
@@ -49,7 +49,7 @@ function header_login()
             <header class="wrapper">
                 <h1 class="title"><a href="/~x76625397/tiendamusicaII/"> Mi Tienda de Música </a></h1>
                 <section id="login-container">
-                    <form action="login.php" method="post">
+                    <form action="/~x76625397/tiendamusicaII/login.php" method="post">
                         <input type="text" name="username" value="" placeholder="Username">
                         <input type="password" name="password" placeholder="Password">
                         <button name="singlebutton"> Login</button>
@@ -76,15 +76,17 @@ function comment_form($id)
             $comment = test_input($_POST["comment"]);
             $commentError = "";
         }
-    }
 
-    if (!empty($comment)) {
-        $comnt = new Comment(array(
-            ":id_user" => $_SESSION["logged_user_id"],
-            ":id_disc" => $id,
-            ":comment" => $comment,
-        ));
-        $comnt->insertComment();
+
+        if (!empty($comment)) {
+            $comnt = new Comment(array(
+                ":id_user" => $_SESSION["logged_user_id"],
+                ":id_disc" => $id,
+                ":comment" => $comment,
+            ));
+            $comnt->insertComment();
+        }
+        $comment = "";
     }
     ?>
     <section id="comment_form">

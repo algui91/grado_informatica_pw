@@ -42,7 +42,6 @@ header_login();
                 </article>
                 <div class="featured-epic">
                     <?php
-                    unset($data[0]);
                     foreach ($data as $item) {
                         ?>
                         <article class="other-discs">
