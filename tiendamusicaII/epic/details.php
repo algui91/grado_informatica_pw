@@ -16,9 +16,8 @@
 require_once('../inc/utils.php');
 require_once('../db/Comment.php');
 
-login_form();
+header_login();
 
-print_r($_SESSION['data']);
 if (isset($_SESSION['data'])) {
     $data = $_SESSION['data'];
     $id = $_GET['id'];
@@ -110,25 +109,14 @@ if (isset($_SESSION['data'])) {
                         </div>
                     </div>
                 </article>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
+                <form method="post"
+                      action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
                     <?php
-
-                    $comment = "";
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        if (!empty($_POST["comment"])) {
-                            $comment = test_input($_POST["comment"]);
-                        }
+                    if (isset($_SESSION["logged_user"])) {
+                        comment_form($id);
+                    } else {
+                        echo "<h3>Logeate para comentar</h3>";
                     }
-
-                    $comnt = new Comment(array(
-                        ":id_user" => $_SESSION["logged_user_id"],
-                        ":id_disc" => $id,
-                        ":comment" => $comment,
-                    ));
-
-                    $comnt->insertComment();
-
-                    comment_form();
                     ?>
                 </form>
             </div>

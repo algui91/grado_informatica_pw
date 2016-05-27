@@ -97,7 +97,7 @@ $u = new User(array(":nombre" => $name,
 $dniIsSet = $u->insertUser();
 ?>
 
-<?php login_form(); ?>
+<?php header_login(); ?>
 
 <div class="main-container">
     <main role="main" class="wrapper">

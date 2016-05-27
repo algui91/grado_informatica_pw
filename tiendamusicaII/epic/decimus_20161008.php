@@ -14,7 +14,7 @@
 
 <?php
 require_once('../inc/utils.php');
-login_form();
+header_login();
 ?>
 
 <div class="main-container">

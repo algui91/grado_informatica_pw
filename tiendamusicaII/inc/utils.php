@@ -24,7 +24,7 @@ function test_input($data)
     return $data;
 }
 
-function login_form()
+function header_login()
 {
     session_start();
     if (isset($_SESSION['logged_user'])) {
@@ -64,22 +64,34 @@ function login_form()
     <?php
 }
 
-function comment_form()
+function comment_form($id)
 {
+    $comment = "";
+    $commentError = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["comment"])) {
+            $commentError = "Debes escribir un comentario";
+        } else {
+            $comment = test_input($_POST["comment"]);
+            $commentError = "";
+        }
+    }
+
+    if (!empty($comment)) {
+        $comnt = new Comment(array(
+            ":id_user" => $_SESSION["logged_user_id"],
+            ":id_disc" => $id,
+            ":comment" => $comment,
+        ));
+        $comnt->insertComment();
+    }
     ?>
     <section id="comment_form">
         <h1>Comentarios</h1>
+        <span><?php if (!empty($commentError)) echo $commentError; ?></span>
         <div>
-            <input type="text" name="name" id="name" value="" placeholder="Name">
-        </div>
-        <div>
-            <input type="email" name="email" id="email" value="" placeholder="Email">
-        </div>
-        <div>
-            <input type="url" name="website" id="website" value="" placeholder="Website URL">
-        </div>
-        <div>
-            <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
+            <textarea rows="10" name="comment" id="comment" placeholder="Comentario"></textarea>
         </div>
         <div>
             <input type="submit" name="submit" value="Add Comment">
