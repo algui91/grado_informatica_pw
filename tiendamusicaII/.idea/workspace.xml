@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f73a548b-c6b5-4f1d-8411-285d170f9a07" name="Default" comment="Fixed login problems">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.sql" afterPath="$PROJECT_DIR$/database.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formulario.php" afterPath="$PROJECT_DIR$/formulario.php" />
     </list>
     <ignored path="P1_Tienda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/utils.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="473">
               <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formulario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formulario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-269">
+              <caret line="222" column="61" selection-start-line="222" selection-start-column="61" selection-end-line="222" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -96,11 +106,11 @@
         <option value="$PROJECT_DIR$/db/User.php" />
         <option value="$PROJECT_DIR$/epic/details.php" />
         <option value="$PROJECT_DIR$/epic.php" />
-        <option value="$PROJECT_DIR$/formulario.php" />
         <option value="$PROJECT_DIR$/css/themes/_default.scss" />
         <option value="$PROJECT_DIR$/db/Comment.php" />
         <option value="$PROJECT_DIR$/inc/utils.php" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/formulario.php" />
       </list>
     </option>
   </component>
@@ -629,7 +639,7 @@
       <workItem from="1464250405407" duration="12623000" />
       <workItem from="1464274372655" duration="233000" />
       <workItem from="1464274952238" duration="2007000" />
-      <workItem from="1464345754357" duration="24981000" />
+      <workItem from="1464345754357" duration="25686000" />
     </task>
     <task id="LOCAL-00001" summary="Sanatize all form's variables">
       <created>1464200350187</created>
@@ -670,7 +680,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60829000" />
+    <option name="totallyTimeSpent" value="61534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
@@ -1055,14 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formulario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="224" column="56" selection-start-line="224" selection-start-column="56" selection-end-line="224" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
@@ -1083,14 +1085,6 @@
             <marker date="1464368508427" expanded="true" signature="2751:2797" ph="..." />
             <marker date="1464368508427" expanded="true" signature="3918:4024" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,6 +1110,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
           <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formulario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="222" column="61" selection-start-line="222" selection-start-column="61" selection-end-line="222" selection-end-column="61" />
           <folding />
         </state>
       </provider>

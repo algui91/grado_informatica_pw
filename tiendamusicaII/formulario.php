@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Nombre">Nombre</label>
                         <div class="col-md-4">
-                            <input id="Nombre" name="name" type="text" placeholder="Nombre"
+                            <input id="Nombre" name="name" type="text" placeholder="Nombre" required
                                    value="<?php echo $name; ?>"
                                    class="form-control input-md">
                         </div>
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Nombre Usuario">Nombre Usuario</label>
                         <div class="col-md-4">
-                            <input id="Nombre Usuario" name="username" type="text"
+                            <input id="Nombre Usuario" name="username" type="text" required
                                    placeholder="Nombre Usuario" value="<?php echo $username; ?>"
                                    class="form-control input-md">
 
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Clave">Clave</label>
                         <div class="col-md-4">
-                            <input id="Clave" name="password" type="password" placeholder="Contraseña"
+                            <input id="Clave" name="password" type="password" placeholder="Contraseña" required
                                    value="<?php echo $password; ?>"
                                    class="form-control input-md">
 
@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="email">email</label>
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" value="<?php echo $email; ?>"
+                            <input id="email" name="email" type="text" value="<?php echo $email; ?>" required
                                    placeholder="Email"
                                    class="form-control input-md">
 
@@ -220,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="col-md-4 control-label" for="DNI">DNI</label>
                         <div class="col-md-4">
                             <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
-                                   placeholder="DNI"
+                                   placeholder="DNI" required
                                    class="form-control input-md">
                             <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
                         </div>
