@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'cookie_lifetime' => 86400 * 7, // Session lasts for 7 days
                 ]);
                 $_SESSION['logged_user'] = $loginResult["nombreUsuario"];
+                $_SESSION['logged_user_id'] = $loginResult["dni"];
                 header("location: index.php");
             } else {
                 $_SESSION['incorrect_password'] = "Usuario o contraseña incorrectos";

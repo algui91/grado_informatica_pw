@@ -14,16 +14,20 @@
 
 <?php
 require_once('../inc/utils.php');
+require_once('../db/Comment.php');
+
 login_form();
 
-$data = $_SESSION['data'];
-$id = $_GET['id'];
-$title = $data[$id]['titulo'];
-$gender = $data[$id]['genero'];
-$price = $data[$id]['precio'];
-$discografy = $data[$id]['productora'];
-$rating = $data[$id]['valoracion'];
-
+print_r($_SESSION['data']);
+if (isset($_SESSION['data'])) {
+    $data = $_SESSION['data'];
+    $id = $_GET['id'];
+    $title = $data[$id]['titulo'];
+    $gender = $data[$id]['genero'];
+    $price = $data[$id]['precio'];
+    $discografy = $data[$id]['productora'];
+    $rating = $data[$id]['valoracion'];
+}
 ?>
 <div class="main-container">
     <main role="main" class="wrapper">
@@ -106,8 +110,24 @@ $rating = $data[$id]['valoracion'];
                         </div>
                     </div>
                 </article>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
                     <?php
+
+                    $comment = "";
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        if (!empty($_POST["comment"])) {
+                            $comment = test_input($_POST["comment"]);
+                        }
+                    }
+
+                    $comnt = new Comment(array(
+                        ":id_user" => $_SESSION["logged_user_id"],
+                        ":id_disc" => $id,
+                        ":comment" => $comment,
+                    ));
+
+                    $comnt->insertComment();
+
                     comment_form();
                     ?>
                 </form>
