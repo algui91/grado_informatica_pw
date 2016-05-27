@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f73a548b-c6b5-4f1d-8411-285d170f9a07" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formulario.php" afterPath="$PROJECT_DIR$/formulario.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css.map" afterPath="$PROJECT_DIR$/css/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/_home.scss" afterPath="$PROJECT_DIR$/css/pages/_home.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DataObject.php" afterPath="$PROJECT_DIR$/db/DataObject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/password.php" afterPath="$PROJECT_DIR$/lib/password.php" />
     </list>
     <ignored path="P1_Tienda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +67,7 @@
       <file leaf-file-name="formulario.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formulario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
+            <state relative-caret-position="523">
               <caret line="224" column="56" selection-start-line="224" selection-start-column="56" selection-end-line="224" selection-end-column="56" />
               <folding />
             </state>
@@ -621,7 +625,7 @@
       <workItem from="1464250405407" duration="12623000" />
       <workItem from="1464274372655" duration="233000" />
       <workItem from="1464274952238" duration="2007000" />
-      <workItem from="1464345754357" duration="17577000" />
+      <workItem from="1464345754357" duration="18197000" />
     </task>
     <task id="LOCAL-00001" summary="Sanatize all form's variables">
       <created>1464200350187</created>
@@ -662,11 +666,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53425000" />
+    <option name="totallyTimeSpent" value="54045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -677,7 +681,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10969116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10969116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1105,7 +1109,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formulario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="523">
           <caret line="224" column="56" selection-start-line="224" selection-start-column="56" selection-end-line="224" selection-end-column="56" />
           <folding />
         </state>

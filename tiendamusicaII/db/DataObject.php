@@ -35,13 +35,6 @@ abstract class DataObject
         }
     }
 
-    public function devolverValor($campo)
-    {
-        if (array_key_exists($campo, $this->datos)) {
-            return $this->datos[$campo];
-        } else die("Campo no encontrado");
-    }
-
     protected static function conectar()
     {
         try {
@@ -58,6 +51,13 @@ abstract class DataObject
     protected static function desconectar($conexion)
     {
         $conexion = "";
+    }
+
+    public function devolverValor($campo)
+    {
+        if (array_key_exists($campo, $this->datos)) {
+            return $this->datos[$campo];
+        } else die("Campo no encontrado");
     }
 }
 
