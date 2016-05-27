@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 27, 2016 at 06:43 PM
+-- Generation Time: May 27, 2016 at 07:13 PM
 -- Server version: 5.5.47-MariaDB
 -- PHP Version: 5.4.16
 
@@ -30,8 +30,24 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `id_comentario` int(11) NOT NULL,
   `id_usuario` varchar(100) NOT NULL,
   `id_disco` int(11) NOT NULL,
-  `comentario` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `comentario` text NOT NULL,
+  `fecha` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `id_usuario`, `id_disco`, `comentario`, `fecha`) VALUES
+(3, '1', 1, 'Comentario en Chronicles', '2016-05-27 21:10:53'),
+(4, '1', 4, 'Comentario en Tree Of Life', '2016-05-27 21:11:06'),
+(5, '1', 3, 'Comentario en Helio', '2016-05-27 21:11:14'),
+(6, '1', 6, 'Comentario en Invincible', '2016-05-27 21:11:21'),
+(7, '1', 5, 'Comentario en Existence', '2016-05-27 21:11:28'),
+(8, '1', 7, 'Comentario en Illusions', '2016-05-27 21:11:35'),
+(9, '1', 2, 'Comentario en Epica', '2016-05-27 21:11:46'),
+(10, '1', 6, 'Segundo comentario por  el mismo usuario', '2016-05-27 21:12:25'),
+(11, '2', 6, 'Un comentario de otro usuario', '2016-05-27 21:13:16');
 
 -- --------------------------------------------------------
 
@@ -83,6 +99,14 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `Usuario`
+--
+
+INSERT INTO `Usuario` (`nombre`, `apellidos`, `nombreUsuario`, `contrasena`, `direccion`, `provincia`, `email`, `dni`, `visa`, `observaciones`, `ciudad`, `envio`) VALUES
+('Alejandro', 'Aleclade', 'a', '$2y$10$.ToIjGQcTUOW7XinF2GJSOhqy9mtR9RYh8q3AjeyVQ/4CNYGZPd6K', 'fas', '1', 'fjsakl', '1', 0, 'fsafsda', 'fdsa', 2),
+('Otro Usuario', 'Otro', 'Otro Usuario', '$2y$10$z7bAG7sWHtPAvheFQAN1BOoXbZWaCtO4fY5/EU14fC4N.OoFHY31e', 'fdfdsa', '1', '', '2', 0, '', '', 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -115,7 +139,7 @@ ALTER TABLE `Usuario`
 -- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `Disco`
 --
