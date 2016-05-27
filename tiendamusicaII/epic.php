@@ -28,6 +28,7 @@ login_form();
                 <?php
                 $discs = new Disc();
                 $data = $discs->getAllDiscs(); // TODO, get only title, add photo, check not empty
+                $_SESSION['data'] = $data;
                 ?>
                 <article class="best-seller">
                     <figure>
@@ -36,7 +37,7 @@ login_form();
                     <header>
                         <h1><?php echo $data[0]['titulo']; ?></h1>
                     </header>
-                    <p><a href="epic/decimus_20161008.php" title="Ver Decimus">Ver</a></p>
+                    <p><a href="epic/details.php?id=<?php echo $data[0]['id'] ?>" title="Ver Decimus">Ver</a></p>
                     <p>15 Comentarios</p>
                 </article>
                 <div class="featured-epic">
@@ -54,7 +55,7 @@ login_form();
                             </header>
                             <p> Comentarios
                             <p>
-                            <p><a href="epic/decimus_20161008.php" title="Ver Decimus"> Ver</a>
+                            <p><a href="epic/details.php?id=<?php echo $item['id'] ?>" title="Ver Decimus"> Ver</a>
                             <p>
                         </article>
                         <?php

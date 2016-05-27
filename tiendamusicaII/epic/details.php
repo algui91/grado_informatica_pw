@@ -15,8 +15,16 @@
 <?php
 require_once('../inc/utils.php');
 login_form();
-?>
 
+$data = $_SESSION['data'];
+$id = $_GET['id'];
+$title = $data[$id]['titulo'];
+$gender = $data[$id]['genero'];
+$price = $data[$id]['precio'];
+$discografy = $data[$id]['productora'];
+$rating = $data[$id]['valoracion'];
+
+?>
 <div class="main-container">
     <main role="main" class="wrapper">
         <h2>Secciones | Generos: <a href="../epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
@@ -24,21 +32,21 @@ login_form();
             <h2>Sección de EPIC</h2>
         </header>
         <header>
-            <h1>DECIMUS</h1>
+            <h1><?php echo $title; ?></h1>
         </header>
         <div class="flex-container-epic">
             <div class="left-column-disc">
                 <article class="disc-contents">
                     <div class="disc-left">
-                        <h1>Audiomachine</h1>
+                        <h1><?php echo $discografy; ?></h1>
                         <figure>
                             <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="512px"
                                  width="512"/>
                         </figure>
-                        <p>Genero</p>
-                        <p>Precio</p>
-                        <p>Productora</p>
-                        <p>Valoración</p>
+                        <p>Género: <?php echo $gender; ?></p>
+                        <p>Precio: $<?php echo $price; ?></p>
+                        <p>Productora: <?php echo $discografy; ?></p>
+                        <p>Valoración: <?php echo $rating; ?></p>
                     </div>
                     <div class="disc-right">
                         <audio controls="controls">
