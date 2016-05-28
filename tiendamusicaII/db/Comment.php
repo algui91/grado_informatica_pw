@@ -63,7 +63,11 @@ class Comment extends DataObject
 //        echo $lastAccess15;
 
         $connection = parent::conectar();
-        $sql = "SELECT Usuario.nombre, comentarios.fecha, comentarios.comentario FROM " . COMMENT_TABLE . " INNER JOIN Usuario ON (Usuario.dni = comentarios.id_usuario) WHERE id_disco = :disco ORDER BY comentarios.fecha DESC";
+        $sql = "SELECT Usuario.nombre, comentarios.fecha, comentarios.comentario 
+                FROM " . COMMENT_TABLE . " 
+                INNER JOIN Usuario ON (Usuario.dni = comentarios.id_usuario) 
+                WHERE id_disco = :disco 
+                ORDER BY comentarios.fecha DESC";
 
         try {
             $stmt = $connection->prepare($sql);

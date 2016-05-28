@@ -54,7 +54,9 @@ class Disc extends DataObject
     public function getAllDiscs()
     {
         $connection = parent::conectar();
-        $sql = "SELECT * FROM " . DISC_TABLE . " ORDER BY valoracion DESC";
+        $sql = "SELECT * 
+                FROM " . DISC_TABLE .
+                " ORDER BY valoracion DESC";
 
         try {
             $stmt = $connection->prepare($sql);

@@ -65,7 +65,9 @@ class User extends DataObject
     public function getUser()
     {
         $connection = parent::conectar();
-        $sql = "SELECT nombreUsuario, contrasena, dni FROM " . USER_TABLE . ' WHERE nombreUsuario = :username';
+        $sql = "SELECT nombreUsuario, contrasena, dni 
+                FROM " . USER_TABLE . ' 
+                WHERE nombreUsuario = :username';
         $result = false;
 
         try {
