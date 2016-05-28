@@ -301,7 +301,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <div>
                             <label for="toc-0">
-                                <input type="checkbox" oninvalid="check(this)" name="toc" id="toc-0" required>
+                                <input type="checkbox" name="toc" id="toc-0" required>
                                 He leido y acepto las condiciones
                             </label>
                         </div>

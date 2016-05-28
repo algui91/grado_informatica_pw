@@ -111,7 +111,7 @@ function comment_form($id)
     <section id="comment_form">
         <span><?php if (!empty($commentError)) echo $commentError; ?></span>
         <div>
-            <textarea rows="10"
+            <textarea rows="10" oninput="this.setCustomValidity('')"
                       oninvalid="this.validity.valueMissing ? this.setCustomValidity('Debes introducir un comentario') : this.setCustomValidity('')"
                       name="comment" id="comment" placeholder="Comentario" required></textarea>
         </div>
