@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f73a548b-c6b5-4f1d-8411-285d170f9a07" name="Default" comment="Fixed login problems">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Comment.php" afterPath="$PROJECT_DIR$/db/Comment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/utils.php" afterPath="$PROJECT_DIR$/inc/utils.php" />
     </list>
     <ignored path="P1_Tienda.iws" />
@@ -23,82 +25,64 @@
     <favorites_list name="P1_Tienda" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/login.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="utils.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/inc/utils.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="436">
-                  <caret line="99" column="80" selection-start-line="99" selection-start-column="80" selection-end-line="99" selection-end-column="80" />
-                  <folding>
-                    <marker date="1464435120386" expanded="true" signature="3356:3392" ph="..." />
-                    <marker date="1464435120386" expanded="true" signature="3651:3679" ph="..." />
-                    <marker date="1464435120386" expanded="true" signature="3786:3811" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="formulario.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/formulario.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-765">
-                  <caret line="160" column="94" selection-start-line="160" selection-start-column="94" selection-end-line="160" selection-end-column="94" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/db/Comment.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="918">
-                  <caret line="65" column="100" selection-start-line="65" selection-start-column="100" selection-end-line="65" selection-end-column="100" />
-                  <folding>
-                    <element signature="e#6#607#0#PHP" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/db/config.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="formulario.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/formulario.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/utils.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
+              <folding>
+                <marker date="1464435738502" expanded="true" signature="3356:3392" ph="..." />
+                <marker date="1464435738502" expanded="true" signature="3651:3679" ph="..." />
+                <marker date="1464435738502" expanded="true" signature="3957:3982" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formulario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formulario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-765">
+              <caret line="160" column="94" selection-start-line="160" selection-start-column="94" selection-end-line="160" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/Comment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="65" column="224" selection-start-line="65" selection-start-column="224" selection-end-line="65" selection-end-column="224" />
+              <folding>
+                <element signature="e#6#607#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -128,11 +112,11 @@
         <option value="$PROJECT_DIR$/epic/details.php" />
         <option value="$PROJECT_DIR$/epic.php" />
         <option value="$PROJECT_DIR$/css/themes/_default.scss" />
-        <option value="$PROJECT_DIR$/db/Comment.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/como_se_hizo.md" />
         <option value="$PROJECT_DIR$/formulario.php" />
         <option value="$PROJECT_DIR$/inc/utils.php" />
+        <option value="$PROJECT_DIR$/db/Comment.php" />
       </list>
     </option>
   </component>
@@ -618,7 +602,7 @@
       <workItem from="1464274952238" duration="2007000" />
       <workItem from="1464345754357" duration="27222000" />
       <workItem from="1464413305632" duration="5089000" />
-      <workItem from="1464430263721" duration="4865000" />
+      <workItem from="1464430263721" duration="5573000" />
     </task>
     <task id="LOCAL-00001" summary="Sanatize all form's variables">
       <created>1464200350187</created>
@@ -659,7 +643,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73024000" />
+    <option name="totallyTimeSpent" value="73732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1080" extended-state="0" />
@@ -1028,16 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="65" column="100" selection-start-line="65" selection-start-column="100" selection-end-line="65" selection-end-column="100" />
-          <folding>
-            <element signature="e#6#607#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1064,12 +1038,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/utils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="99" column="80" selection-start-line="99" selection-start-column="80" selection-end-line="99" selection-end-column="80" />
+        <state relative-caret-position="670">
+          <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
           <folding>
-            <marker date="1464435120386" expanded="true" signature="3356:3392" ph="..." />
-            <marker date="1464435120386" expanded="true" signature="3651:3679" ph="..." />
-            <marker date="1464435120386" expanded="true" signature="3786:3811" ph="..." />
+            <marker date="1464435738502" expanded="true" signature="3356:3392" ph="..." />
+            <marker date="1464435738502" expanded="true" signature="3651:3679" ph="..." />
+            <marker date="1464435738502" expanded="true" signature="3957:3982" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="65" column="224" selection-start-line="65" selection-start-column="224" selection-end-line="65" selection-end-column="224" />
+          <folding>
+            <element signature="e#6#607#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

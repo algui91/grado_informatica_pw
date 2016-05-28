@@ -111,7 +111,9 @@ function comment_form($id)
     <section id="comment_form">
         <span><?php if (!empty($commentError)) echo $commentError; ?></span>
         <div>
-            <textarea rows="10" name="comment" id="comment" placeholder="Comentario" required></textarea>
+            <textarea rows="10"
+                      oninvalid="this.validity.valueMissing ? this.setCustomValidity('Debes introducir un comentario') : this.setCustomValidity('')"
+                      name="comment" id="comment" placeholder="Comentario" required></textarea>
         </div>
         <div>
             <input type="submit" name="submit" value="Add Comment">
