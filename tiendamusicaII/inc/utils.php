@@ -97,10 +97,10 @@ function comment_form($id)
         ?>
         <section id="comment_section">
             <header id="comment_header">
-                <p><?php echo $item['nombre'] . " el " . $item['fecha'] . " comentó:"; ?></p>
+                <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
             </header>
             <section>
-                <p><?php echo $item['comentario']; ?></p>
+                <p><em><?php echo $item['comentario']; ?></em></p>
             </section>
         </section>
         <?php
