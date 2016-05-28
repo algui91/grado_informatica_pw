@@ -90,8 +90,6 @@ function comment_form($id)
     }
     ?>
     <h1>Comentarios</h1>
-    <!--        En cada comentario aparecerá la hora y el día, el nombre de usuario, y el propio
-    texto del usuario-->
     <?php
     $allComments = new Comment();
 

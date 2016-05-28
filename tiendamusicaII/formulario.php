@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,6 +9,56 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript">
+        function check(input) {
+            if (input.name == "password") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity('Mejora esa contraseña (Más de 8 caracteres, mayúsculas, minúsculas, números y símbolos son obligatorios)');
+                }
+                else {
+                    input.setCustomValidity('');
+                }
+            }
+            else if (input.name == "name" || input.name == "lastname") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity(input.id + ' debe contener únicamente caracteres y/o espacios');
+                } else {
+                    input.setCustomValidity('');
+                }
+            } else if (input.name == "username") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity('El nombre de usuario debe contener solo carácteres y/o números.');
+                } else {
+                    input.setCustomValidity('');
+                }
+            } else if (input.name == "email") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity('El email introducido no es correcto');
+                } else {
+                    input.setCustomValidity('');
+                }
+            } else if (input.name == "dni") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity('El DNI no es correcto');
+                } else {
+                    input.setCustomValidity('');
+                }
+            } else if (input.name == "visa") {
+                if (input.validity.patternMismatch) {
+                    input.setCustomValidity('Solo se permiten números');
+                } else {
+                    input.setCustomValidity('');
+                }
+            } else if (input.name == "toc") {
+                if (input.validity.valueMissing) {
+                    input.setCustomValidity('Debes aceptar los términos y condiciones para continuar');
+                } else {
+                    input.setCustomValidity('');
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -108,188 +158,159 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Formulario de suscripción</h2>
         </header>
         <section class="flex-container-form">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-horizontal">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <fieldset>
 
                     <!-- Form Name -->
                     <h1>Suscripción</h1>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Nombre">Nombre</label>
-                        <div class="col-md-4">
-                            <input id="Nombre" name="name" type="text" placeholder="Nombre" required
-                                   value="<?php echo $name; ?>"
-                                   class="form-control input-md">
-                        </div>
+                    <label for="Nombre">Nombre</label>
+                    <div>
+                        <input id="Nombre" name="name" type="text" placeholder="Nombre" required maxlength="15"
+                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)"
+                               value="<?php echo $name; ?>">
                     </div>
 
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Apellidos">Apellidos</label>
-                        <div class="col-md-4">
-                            <input id="Apellidos" name="lastname" type="text" placeholder="Apellido"
-                                   value="<?php echo $lastname; ?>"
-                                   class="form-control input-md">
+                    <label for="Apellidos">Apellidos</label>
+                    <div>
+                        <input id="Apellidos" name="lastname" type="text" placeholder="Apellido" maxlength="20"
+                               size="25" oninput="check(this)" pattern="^[a-zA-Z ]*$"
+                               value="<?php echo $lastname; ?>">
 
-                        </div>
+                    </div>
+
+
+                    <!-- Password input-->
+                    <label for="Nombre Usuario">Nombre Usuario</label>
+                    <div>
+                        <input id="Nombre Usuario" name="username" type="text" required pattern="^[a-zA-Z0-9]*$"
+                               oninput="check(this)"
+                               placeholder="Nombre Usuario" value="<?php echo $username; ?>">
                     </div>
 
                     <!-- Password input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Nombre Usuario">Nombre Usuario</label>
-                        <div class="col-md-4">
-                            <input id="Nombre Usuario" name="username" type="text" required
-                                   placeholder="Nombre Usuario" value="<?php echo $username; ?>"
-                                   class="form-control input-md">
+                    <label for="Clave">Clave</label>
+                    <div>
+                        <input id="Clave" name="password" type="password" placeholder="Contraseña" required
+                               oninput="check(this)"
+                               pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$"
+                               value="<?php echo $password; ?>">
 
-                        </div>
-                    </div>
-
-                    <!-- Password input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Clave">Clave</label>
-                        <div class="col-md-4">
-                            <input id="Clave" name="password" type="password" placeholder="Contraseña" required
-                                   value="<?php echo $password; ?>"
-                                   class="form-control input-md">
-
-                        </div>
                     </div>
 
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Dirección Postal">Dirección Postal</label>
-                        <div class="col-md-4">
-                            <input id="Dirección Postal" name="direction" type="text"
-                                   placeholder="Dirección postal" value="<?php echo $direction; ?>"
-                                   class="form-control input-md">
+                    <label for="Dirección Postal">Dirección Postal</label>
+                    <div>
+                        <input id="Dirección Postal" name="direction" type="text" maxlength="40" size="50"
+                               placeholder="Dirección postal" value="<?php echo $direction; ?>">
 
-                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Ciudad">Ciudad</label>
-                        <div class="col-md-4">
-                            <input id="Ciudad" name="city" type="text"
-                                   placeholder="Ciudad" value="<?php echo $city; ?>"
-                                   class="form-control input-md">
+                    <label for="Ciudad">Ciudad</label>
+                    <div>
+                        <input id="Ciudad" name="city" type="text" maxlength="10" size="15"
+                               placeholder="Ciudad" value="<?php echo $city; ?>">
 
-                        </div>
                     </div>
 
                     <!-- Select Basic -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Provicia">Provicia</label>
-                        <div class="col-md-4">
-                            <select id="Provicia" name="province" class="form-control">
-                                <option <?php if (isset($province) && $province == 1) echo "selected"; ?> value="1">
-                                    Granada
-                                </option>
-                                <option <?php if (isset($province) && $province == 2) echo "selected"; ?> value="2">
-                                    Almeria
-                                </option>
-                                <option <?php if (isset($province) && $province == 3) echo "selected"; ?> value="3">
-                                    Huelva
-                                </option>
-                                <option <?php if (isset($province) && $province == 4) echo "selected"; ?> value="4">
-                                    Sevilla
-                                </option>
-                                <option <?php if (isset($province) && $province == 5) echo "selected"; ?> value="5">
-                                    Cádiz
-                                </option>
-                                <option <?php if (isset($province) && $province == 6) echo "selected"; ?> value="6">
-                                    Malaga
-                                </option>
-                            </select>
-                        </div>
+                    <label for="Provicia">Provicia</label>
+                    <div>
+                        <select id="Provicia" name="province">
+                            <option <?php if (isset($province) && $province == 1) echo "selected"; ?> value="1">
+                                Granada
+                            </option>
+                            <option <?php if (isset($province) && $province == 2) echo "selected"; ?> value="2">
+                                Almeria
+                            </option>
+                            <option <?php if (isset($province) && $province == 3) echo "selected"; ?> value="3">
+                                Huelva
+                            </option>
+                            <option <?php if (isset($province) && $province == 4) echo "selected"; ?> value="4">
+                                Sevilla
+                            </option>
+                            <option <?php if (isset($province) && $province == 5) echo "selected"; ?> value="5">
+                                Cádiz
+                            </option>
+                            <option <?php if (isset($province) && $province == 6) echo "selected"; ?> value="6">
+                                Malaga
+                            </option>
+                        </select>
                     </div>
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="email">email</label>
-                        <div class="col-md-4">
-                            <input id="email" name="email" type="text" value="<?php echo $email; ?>" required
-                                   placeholder="Email"
-                                   class="form-control input-md">
+                    <label for="email">Email</label>
+                    <div>
+                        <input id="email" name="email" type="text" value="<?php echo $email; ?>" required
+                               oninput="check(this)"
+                               placeholder="Email" maxlength="30" size="25"
+                               pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$">
 
-                        </div>
                     </div>
 
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="DNI">DNI</label>
-                        <div class="col-md-4">
-                            <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
-                                   placeholder="DNI" required
-                                   class="form-control input-md">
-                            <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
-                        </div>
+                    <label for="DNI">DNI</label>
+                    <div>
+                        <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
+                               placeholder="DNI" required oninput="check(this)" size="9" maxlength="9"
+                               pattern="^\d{8}[a-zA-Z]$">
+                        <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
                     </div>
 
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="VISA">VISA</label>
-                        <div class="col-md-4">
-                            <input id="VISA" name="visa" type="text" value="<?php echo $visa; ?>"
-                                   placeholder="VISA"
-                                   class="form-control input-md">
+                    <label for="VISA">VISA</label>
+                    <div>
+                        <input id="VISA" name="visa" type="text" oninput="check(this)" pattern="[0-9]*"
+                               value="<?php echo $visa; ?>"
+                               placeholder="VISA">
 
-                        </div>
                     </div>
 
                     <!-- Textarea -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Observaciones">Observaciones</label>
-                        <div class="col-md-4">
-                            <textarea class="form-control" id="Observaciones"
+                    <label for="Observaciones">Observaciones</label>
+                    <div>
+                            <textarea id="Observaciones" maxlength="500"
                                       name="comment"><?php echo $comment; ?></textarea>
-                        </div>
                     </div>
 
                     <!-- Multiple Radios (inline) -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="newsletter">Envio</label>
-                        <div class="col-md-4">
-                            <label class="radio-inline" for="Envío-0">
-                                <input type="radio" name="newsletter"
-                                       id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?>
-                                       value="1">
-                                Mensual
-                            </label>
-                            <label class="radio-inline" for="Envío-1">
-                                <input type="radio" name="newsletter"
-                                       id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?>
-                                       value="2">
-                                Semanal
-                            </label>
-                            <label class="radio-inline" for="Envío-2">
-                                <input type="radio" name="newsletter"
-                                       id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?>
-                                       value="3">
-                                Diario
-                            </label>
-                        </div>
+                    <label for="newsletter">Envio</label>
+                    <div>
+                        <label for="Envío-0">
+                            <input type="radio" name="newsletter"
+                                   id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?>
+                                   value="1">
+                            Mensual
+                        </label>
+                        <label for="Envío-1">
+                            <input type="radio" name="newsletter"
+                                   id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?>
+                                   value="2">
+                            Semanal
+                        </label>
+                        <label for="Envío-2">
+                            <input type="radio" name="newsletter"
+                                   id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?>
+                                   value="3">
+                            Diario
+                        </label>
                     </div>
 
                     <!-- Multiple Checkboxes -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="toc">TOS</label>
-                        <div class="col-md-4">
-                            <div class="checkbox">
-                                <label for="toc-0">
-                                    <input type="checkbox" name="toc" id="toc-0" value="1">
-                                    He leido y acepto las condiciones
-                                </label>
-                            </div>
+                    <label for="toc">TOS</label>
+                    <div>
+                        <div>
+                            <label for="toc-0">
+                                <input type="checkbox" oninvalid="check(this)" name="toc" id="toc-0" required>
+                                He leido y acepto las condiciones
+                            </label>
                         </div>
                     </div>
 
                     <!-- Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="singlebutton"></label>
-                        <div class="col-md-4">
-                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>
-                        </div>
+                    <label for="singlebutton"></label>
+                    <div>
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>
                     </div>
 
                 </fieldset>
