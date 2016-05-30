@@ -89,24 +89,6 @@ function comment_form($id)
         $comment = "";
     }
     ?>
-    <h1>Comentarios</h1>
-    <?php
-    $allComments = new Comment();
-
-    foreach ($allComments->getAllCommentsForDisc($id) as $item) {
-        ?>
-        <section id="comment_section">
-            <header id="comment_header">
-                <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
-            </header>
-            <section>
-                <p><em><?php echo $item['comentario']; ?></em></p>
-            </section>
-        </section>
-        <?php
-    }
-
-    ?>
     <h1>Dejanos un comentario</h1>
     <section id="comment_form">
         <span><?php if (!empty($commentError)) echo $commentError; ?></span>

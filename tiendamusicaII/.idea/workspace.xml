@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f73a548b-c6b5-4f1d-8411-285d170f9a07" name="Default" comment="Fixed login problems">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formulario.php" afterPath="$PROJECT_DIR$/formulario.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/epic/decimus_20161008.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/epic/details.php" afterPath="$PROJECT_DIR$/epic/details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/utils.php" afterPath="$PROJECT_DIR$/inc/utils.php" />
     </list>
     <ignored path="P1_Tienda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,18 +30,27 @@
       <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/utils.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+            <state relative-caret-position="332">
+              <caret line="86" column="36" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
               <folding>
-                <marker date="1464436621378" expanded="true" signature="3356:3392" ph="..." />
-                <marker date="1464436621378" expanded="true" signature="3651:3679" ph="..." />
-                <marker date="1464436621378" expanded="true" signature="3994:4019" ph="..." />
+                <marker date="1464636170819" expanded="true" signature="3122:3150" ph="..." />
+                <marker date="1464636170819" expanded="true" signature="3465:3490" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formulario.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/epic/details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="145" column="60" selection-start-line="145" selection-start-column="60" selection-end-line="145" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formulario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formulario.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
@@ -73,7 +85,6 @@
         <option value="$PROJECT_DIR$/css/pages/_home.scss" />
         <option value="$PROJECT_DIR$/epic/decimus_20161008.php" />
         <option value="$PROJECT_DIR$/db/config.php" />
-        <option value="$PROJECT_DIR$/epic/details.php" />
         <option value="$PROJECT_DIR$/epic.php" />
         <option value="$PROJECT_DIR$/css/themes/_default.scss" />
         <option value="$PROJECT_DIR$/login.php" />
@@ -81,8 +92,9 @@
         <option value="$PROJECT_DIR$/db/Comment.php" />
         <option value="$PROJECT_DIR$/db/Disc.php" />
         <option value="$PROJECT_DIR$/db/User.php" />
-        <option value="$PROJECT_DIR$/inc/utils.php" />
         <option value="$PROJECT_DIR$/formulario.php" />
+        <option value="$PROJECT_DIR$/inc/utils.php" />
+        <option value="$PROJECT_DIR$/epic/details.php" />
       </list>
     </option>
   </component>
@@ -136,6 +148,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -164,19 +177,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
+              <option name="myItemId" value="epic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -599,7 +611,11 @@
       <workItem from="1464274952238" duration="2007000" />
       <workItem from="1464345754357" duration="27222000" />
       <workItem from="1464413305632" duration="5089000" />
-      <workItem from="1464430263721" duration="6543000" />
+      <workItem from="1464430263721" duration="6562000" />
+      <workItem from="1464447523799" duration="690000" />
+      <workItem from="1464460388918" duration="10000" />
+      <workItem from="1464551434026" duration="642000" />
+      <workItem from="1464636127793" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="Sanatize all form's variables">
       <created>1464200350187</created>
@@ -640,34 +656,34 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74702000" />
+    <option name="totallyTimeSpent" value="76403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1067" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3285568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -926,7 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15707">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,13 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/epic/details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-826">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/epic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -983,7 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="115" selection-start-line="5" selection-start-column="115" selection-end-line="5" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,21 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#607#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
-          <folding>
-            <marker date="1464436621378" expanded="true" signature="3356:3392" ph="..." />
-            <marker date="1464436621378" expanded="true" signature="3651:3679" ph="..." />
-            <marker date="1464436621378" expanded="true" signature="3994:4019" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,6 +1040,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="309" column="35" selection-start-line="309" selection-start-column="35" selection-end-line="309" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="86" column="36" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
+          <folding>
+            <marker date="1464636170819" expanded="true" signature="3122:3150" ph="..." />
+            <marker date="1464636170819" expanded="true" signature="3465:3490" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/epic/details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="145" column="60" selection-start-line="145" selection-start-column="60" selection-end-line="145" selection-end-column="60" />
           <folding />
         </state>
       </provider>

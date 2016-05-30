@@ -120,13 +120,30 @@ if (isset($_SESSION['data'])) {
                         </div>
                     </div>
                 </article>
+                <?php
+                $allComments = new Comment();
+
+                foreach ($allComments->getAllCommentsForDisc($id) as $item) {
+                    ?>
+                    <section id="comment_section">
+                        <h1>Comentarios</h1>
+                        <header id="comment_header">
+                            <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
+                        </header>
+                        <section>
+                            <p><em><?php echo $item['comentario']; ?></em></p>
+                        </section>
+                    </section>
+                    <?php
+                }
+                ?>
                 <form method="post"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
                     <?php
                     if (isset($_SESSION["logged_user"])) {
                         comment_form($id);
                     } else {
-                        echo "<h3>Logeate para comentar</h3>";
+                        echo "<h1>Logeate para comentar</h1>";
                     }
                     ?>
                 </form>
