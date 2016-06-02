@@ -26,28 +26,29 @@ require_once('DataObject.php');
 class Disc extends DataObject
 {
     protected $datos = array(
-        ":id" => "",
+//        ":id" => "",
         ":titulo" => "",
-        ":genero" => "",
+//        ":genero" => "",
         ":precio" => "",
         ":productora" => "",
-        ":valoracion" => "",
+//        ":valoracion" => "",
     );
 
     public function insertDisc()
     {
         $connection = parent::conectar();
         $sql = 'INSERT INTO ' . DISC_TABLE . ' 
-            (id, titulo, genero, precio, productora, valoracion)
-            VALUES (:id, :titulo, :genero, :precio, :productora, :valoracion)';
+            (titulo, genero, precio, productora)
+            VALUES (:titulo, "EPIC", :precio, :productora)';
         try {
             $st = $connection->prepare($sql);
             $result = $st->execute($this->datos);
         } catch (PDOException $e) {
             die("Consulta fallida: " . $e->getMessage());
         }
+        
         parent::desconectar($connection);
-
+        
         return $result;
     }
 

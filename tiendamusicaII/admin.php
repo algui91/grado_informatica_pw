@@ -66,6 +66,7 @@ if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
 <?php
 
 require_once('db/User.php');
+require_once('db/Disc.php');
 require_once('lib/password.php');
 require_once('inc/utils.php');
 
@@ -107,31 +108,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (!empty($dni)) {
-        $u = new User(array(":nombre" => $title,
-            ":apellidos" => $gender,
-            ":nombreUsuario" => $producer,
-            ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
-            ":direccion" => $direction,
-            ":email" => $email,
-            ":dni" => $dni,
-            ":visa" => $price,
-            ":observaciones" => $comment,
-            ":ciudad" => $city,
-            ":provincia" => $province,
-            ":newsletter" => $newsletter));
+    $disc = new Disc(array(":titulo" => $title,
+        ":productora" => $producer,
+        ":precio" => $price
 
-        $dniIsSet = $u->insertUser();
-        $dni = "";
-    }
+    ));
 
-    pretty_print($_SESSION);
+    $disc->insertDisc();
 }
 ?>
 
-<?php header_login();?>
-
-
+<?php header_login(); ?>
 
 <div class="main-container">
     <main role="main" class="wrapper">
@@ -151,13 +138,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                value="<?php echo $title; ?>">
                     </div>
 
-                    <label for="Género">Género</label>
-                    <div>
-                        <input id="Género" name="gender" type="text" placeholder="Género" required maxlength="20"
-                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="\w+"
-                               value="<?php echo $gender; ?>">
-
-                    </div>
+                    <!--                    <label for="Género">Género</label>-->
+                    <!--                    <div>-->
+                    <!--                        <input id="Género" name="gender" type="text" placeholder="Género" required maxlength="20"-->
+                    <!--                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="\w+"-->
+                    <!--                               value="--><?php //echo $gender; ?><!--">-->
+                    <!---->
+                    <!--                    </div>-->
 
                     <label for="Productora">Productora</label>
                     <div>
