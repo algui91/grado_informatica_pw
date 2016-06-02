@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="Titulo">Titulo</label>
                     <div>
                         <input id="Titulo" name="title" type="text" placeholder="Titulo" required maxlength="15"
-                               size="20" pattern="\w+" oninput="check(this)" oninvalid="check(this)"
+                               size="20" pattern="^[\w\d ]*$" oninput="check(this)" oninvalid="check(this)"
                                value="<?php echo $title; ?>">
                     </div>
 
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <label for="Productora">Productora</label>
                     <div>
-                        <input id="Productora" name="producer" type="text" required pattern="\w+"
+                        <input id="Productora" name="producer" type="text" required pattern="^[\w\d ]*$"
                                oninput="check(this)" oninvalid="check(this)"
                                placeholder="Productora" value="<?php echo $producer; ?>">
                     </div>
