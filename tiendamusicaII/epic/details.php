@@ -53,9 +53,19 @@ if (isset($_SESSION['data'])) {
                 <article class="disc-contents">
                     <div class="disc-left">
                         <h1><?php echo $discografy; ?></h1>
-                        <figure>
+                        <figure class="tooltip">
                             <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="512px"
                                  width="512"/>
+                            <span class="tooltiptext">
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                                Tooltip text<br/>
+                            </span>
                         </figure>
                         <p>Género: <?php echo $gender; ?></p>
                         <p>Precio: $<?php echo $price; ?></p>
@@ -122,21 +132,22 @@ if (isset($_SESSION['data'])) {
                 </article>
                 <?php
                 $allComments = new Comment();
-
-                foreach ($allComments->getAllCommentsForDisc($id) as $item) {
-                    ?>
-                    <section id="comment_section">
-                        <h1>Comentarios</h1>
-                        <header id="comment_header">
-                            <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
-                        </header>
-                        <section>
-                            <p><em><?php echo $item['comentario']; ?></em></p>
-                        </section>
-                    </section>
-                    <?php
-                }
                 ?>
+                <section id="comment_section">
+                    <h1>Comentarios</h1>
+                    <?php
+                    foreach ($allComments->getAllCommentsForDisc($id) as $item) {
+                    ?>
+                    <header id="comment_header">
+                        <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
+                    </header>
+                    <section>
+                        <p><em><?php echo $item['comentario']; ?></em></p>
+                    </section>
+                </section>
+            <?php
+            }
+            ?>
                 <form method="post"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
                     <?php
