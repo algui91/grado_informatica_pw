@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php header_login(); pretty_print(get_defined_vars()) ; ?>
+<?php header_login(); ?>
 
 <div class="main-container">
     <main role="main" class="wrapper">
