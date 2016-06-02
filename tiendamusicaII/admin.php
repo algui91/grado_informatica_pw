@@ -161,21 +161,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="Titulo">Titulo</label>
                     <div>
                         <input id="Titulo" name="title" type="text" placeholder="Titulo" required maxlength="15"
-                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)" oninvalid="check(this)"
+                               size="20" pattern="\w+" oninput="check(this)" oninvalid="check(this)"
                                value="<?php echo $title; ?>">
                     </div>
 
                     <label for="Género">Género</label>
                     <div>
                         <input id="Género" name="gender" type="text" placeholder="Género" required maxlength="20"
-                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="^[a-zA-Z ]*$"
+                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="\w+"
                                value="<?php echo $gender; ?>">
 
                     </div>
 
                     <label for="Productora">Productora</label>
                     <div>
-                        <input id="Productora" name="producer" type="text" required pattern="^[a-zA-Z0-9]*$"
+                        <input id="Productora" name="producer" type="text" required pattern="\w+"
                                oninput="check(this)" oninvalid="check(this)"
                                placeholder="Productora" value="<?php echo $producer; ?>">
                     </div>
@@ -184,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <input id="Precio" name="price" type="text" required oninput="check(this)"
                                oninvalid="check(this)"
-                               pattern="^\d+(\.\d{1,2})?$"
+                               pattern="\d+(\.\d{1,2})?"
                                value="<?php echo $price; ?>"
                                placeholder="Precio">
 
