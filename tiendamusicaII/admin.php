@@ -102,15 +102,15 @@ require_once('inc/utils.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
-$newsletter = $province = $lastname = $username = $password = $direction = $city = $visa = $email = $comment = $dni = $name = "";
+$newsletter = $province = $gender = $producer = $password = $direction = $city = $price = $email = $comment = $dni = $titulo = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "Name is required"; // TODO
     } else {
-        $name = test_input($_POST["name"]);
+        $titulo = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+        if (!preg_match("/^[a-zA-Z ]*$/", $titulo)) {
             $nameErr = "Only letters and white space allowed";
         }
     }
@@ -133,10 +133,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $province = test_input($_POST["province"]);
     }
     if (!empty($_POST["lastname"])) {
-        $lastname = test_input($_POST["lastname"]);
+        $gender = test_input($_POST["lastname"]);
     }
     if (!empty($_POST["username"])) {
-        $username = test_input($_POST["username"]);
+        $producer = test_input($_POST["username"]);
     }
     if (!empty($_POST["password"])) {
         $password = test_input($_POST["password"]);
@@ -148,28 +148,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $city = test_input($_POST["city"]);
     }
     if (!empty($_POST["visa"])) {
-        $visa = test_input($_POST["visa"]);
+        $price = test_input($_POST["visa"]);
     }
     if (empty($_POST["comment"])) {
         $comment = "";
     } else {
         $comment = test_input($_POST["comment"]);
     }
-    if (empty($_POST["gender"])) {
-        $genderErr = "Gender is required";
-    } else {
-        $gender = test_input($_POST["gender"]);
-    }
 
     if (!empty($dni)) {
-        $u = new User(array(":nombre" => $name,
-            ":apellidos" => $lastname,
-            ":nombreUsuario" => $username,
+        $u = new User(array(":nombre" => $titulo,
+            ":apellidos" => $gender,
+            ":nombreUsuario" => $producer,
             ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
             ":direccion" => $direction,
             ":email" => $email,
             ":dni" => $dni,
-            ":visa" => $visa,
+            ":visa" => $price,
             ":observaciones" => $comment,
             ":ciudad" => $city,
             ":provincia" => $province,
@@ -186,162 +181,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="main-container">
     <main role="main" class="wrapper">
         <header class="section-title">
-            <h2>Formulario de suscripción</h2>
+            <h2>Añadir Discos a EPIC</h2>
         </header>
         <section class="flex-container-form">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <fieldset>
 
-                    <!-- Form Name -->
-                    <h1>Suscripción</h1>
+                    <h1>Datos del disco</h1>
 
-                    <label for="Nombre">Nombre</label>
+                    <label for="Titulo">Titulo</label>
                     <div>
-                        <input id="Nombre" name="name" type="text" placeholder="Nombre" required maxlength="15"
+                        <input id="Titulo" name="titulo" type="text" placeholder="Titulo" required maxlength="15"
                                size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)"
-                               value="<?php echo $name; ?>">
+                               value="<?php echo $titulo; ?>">
                     </div>
 
-                    <!-- Text input-->
-                    <label for="Apellidos">Apellidos</label>
+                    <label for="Género">Género</label>
                     <div>
-                        <input id="Apellidos" name="lastname" type="text" placeholder="Apellido" maxlength="20"
+                        <input id="Género" name="gender" type="text" placeholder="Género" maxlength="20"
                                size="25" oninput="check(this)" pattern="^[a-zA-Z ]*$"
-                               value="<?php echo $lastname; ?>">
+                               value="<?php echo $gender; ?>">
 
                     </div>
 
-
-                    <!-- Password input-->
-                    <label for="Nombre Usuario">Nombre Usuario</label>
+                    <label for="Precio">Precio</label>
                     <div>
-                        <input id="Nombre Usuario" name="username" type="text" required pattern="^[a-zA-Z0-9]*$"
+                        <input id="Precio" name="price" type="text" oninput="check(this)" pattern="^\d+(\.\d{1,2})?$"
+                               value="<?php echo $price; ?>"
+                               placeholder="Precio">
+
+                    </div>
+
+                    <label for="Productora">Productora</label>
+                    <div>
+                        <input id="Productora" name="producer" type="text" required pattern="^[a-zA-Z0-9]*$"
                                oninput="check(this)"
-                               placeholder="Nombre Usuario" value="<?php echo $username; ?>">
-                    </div>
-
-                    <!-- Password input-->
-                    <label for="Clave">Clave</label>
-                    <div>
-                        <input id="Clave" name="password" type="password" placeholder="Contraseña" required
-                               oninput="check(this)"
-                               pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$"
-                               value="<?php echo $password; ?>">
-
-                    </div>
-
-                    <!-- Text input-->
-                    <label for="Dirección Postal">Dirección Postal</label>
-                    <div>
-                        <input id="Dirección Postal" name="direction" type="text" maxlength="40" size="50"
-                               placeholder="Dirección postal" value="<?php echo $direction; ?>">
-
-                    </div>
-
-                    <label for="Ciudad">Ciudad</label>
-                    <div>
-                        <input id="Ciudad" name="city" type="text" maxlength="10" size="15"
-                               placeholder="Ciudad" value="<?php echo $city; ?>">
-
-                    </div>
-
-                    <!-- Select Basic -->
-                    <label for="Provicia">Provicia</label>
-                    <div>
-                        <select id="Provicia" name="province">
-                            <option <?php if (isset($province) && $province == 1) echo "selected"; ?> value="1">
-                                Granada
-                            </option>
-                            <option <?php if (isset($province) && $province == 2) echo "selected"; ?> value="2">
-                                Almeria
-                            </option>
-                            <option <?php if (isset($province) && $province == 3) echo "selected"; ?> value="3">
-                                Huelva
-                            </option>
-                            <option <?php if (isset($province) && $province == 4) echo "selected"; ?> value="4">
-                                Sevilla
-                            </option>
-                            <option <?php if (isset($province) && $province == 5) echo "selected"; ?> value="5">
-                                Cádiz
-                            </option>
-                            <option <?php if (isset($province) && $province == 6) echo "selected"; ?> value="6">
-                                Malaga
-                            </option>
-                        </select>
-                    </div>
-                    <!-- Text input-->
-                    <label for="email">Email</label>
-                    <div>
-                        <input id="email" name="email" type="text" value="<?php echo $email; ?>" required
-                               oninput="check(this)"
-                               placeholder="Email" maxlength="30" size="25"
-                               pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$">
-
-                    </div>
-
-                    <!-- Text input-->
-                    <label for="DNI">DNI</label>
-                    <div>
-                        <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
-                               placeholder="DNI" required oninput="check(this)" size="9" maxlength="9"
-                               pattern="^\d{8}[a-zA-Z]$">
-                        <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
-                    </div>
-
-                    <!-- Text input-->
-                    <label for="VISA">VISA</label>
-                    <div>
-                        <input id="VISA" name="visa" type="text" oninput="check(this)" pattern="[0-9]*"
-                               value="<?php echo $visa; ?>"
-                               placeholder="VISA">
-
-                    </div>
-
-                    <!-- Textarea -->
-                    <label for="Observaciones">Observaciones</label>
-                    <div>
-                            <textarea id="Observaciones" maxlength="500"
-                                      name="comment"><?php echo $comment; ?></textarea>
-                    </div>
-
-                    <!-- Multiple Radios (inline) -->
-                    <label for="newsletter">Envio</label>
-                    <div>
-                        <label for="Envío-0">
-                            <input type="radio" name="newsletter"
-                                   id="Envío-0" <?php if (isset($newsletter) && $newsletter == "1") echo "checked"; ?>
-                                   value="1">
-                            Mensual
-                        </label>
-                        <label for="Envío-1">
-                            <input type="radio" name="newsletter"
-                                   id="Envío-1" <?php if (isset($newsletter) && $newsletter == "2") echo "checked"; ?>
-                                   value="2">
-                            Semanal
-                        </label>
-                        <label for="Envío-2">
-                            <input type="radio" name="newsletter"
-                                   id="Envío-2" <?php if (isset($newsletter) && $newsletter == "3") echo "checked"; ?>
-                                   value="3">
-                            Diario
-                        </label>
-                    </div>
-
-                    <!-- Multiple Checkboxes -->
-                    <label for="toc">TOS</label>
-                    <div>
-                        <div>
-                            <label for="toc-0">
-                                <input type="checkbox" oninvalid="check(this)" onclick="this.setCustomValidity('')" name="toc" id="toc-0" required>
-                                He leido y acepto las condiciones
-                            </label>
-                        </div>
+                               placeholder="Productora" value="<?php echo $producer; ?>">
                     </div>
 
                     <!-- Button -->
                     <label for="singlebutton"></label>
                     <div>
-                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Crear Disco</button>
                     </div>
 
                 </fieldset>
