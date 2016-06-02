@@ -159,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="Nombre">Nombre</label>
                     <div>
                         <input id="Nombre" name="name" type="text" placeholder="Nombre" required maxlength="15"
-                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)"
+                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)" oninvalid="check(this)"
                                value="<?php echo $name; ?>">
                     </div>
 
@@ -172,12 +172,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     </div>
 
-
                     <!-- Password input-->
                     <label for="Nombre Usuario">Nombre Usuario</label>
                     <div>
-                        <input id="Nombre Usuario" name="username" type="text" required pattern="^[a-zA-Z0-9]*$"
-                               oninput="check(this)"
+                        <input id="Nombre Usuario" name="username" type="text" required pattern="[a-zA-Z0-9_]*"
+                               oninput="check(this)" oninvalid="check(this)"
                                placeholder="Nombre Usuario" value="<?php echo $username; ?>">
                     </div>
 
@@ -185,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="Clave">Clave</label>
                     <div>
                         <input id="Clave" name="password" type="password" placeholder="Contraseña" required
-                               oninput="check(this)"
+                               oninput="check(this)" oninvalid="check(this)"
                                pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$"
                                value="<?php echo $password; ?>">
 
@@ -234,7 +233,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="email">Email</label>
                     <div>
                         <input id="email" name="email" type="text" value="<?php echo $email; ?>" required
-                               oninput="check(this)"
+                               oninput="check(this)" oninvalid="check(this)"
                                placeholder="Email" maxlength="30" size="25"
                                pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$">
 
@@ -244,7 +243,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="DNI">DNI</label>
                     <div>
                         <input id="DNI" name="dni" type="text" value="<?php echo $dni; ?>"
-                               placeholder="DNI" required oninput="check(this)" size="9" maxlength="9"
+                               placeholder="DNI" required oninput="check(this)" oninvalid="check(this)" size="9"
+                               maxlength="9"
                                pattern="^\d{8}[a-zA-Z]$">
                         <?php if (isset($dniIsSet) && $dniIsSet == true) echo "* Este DNI ya está dado de alta" ?>
                     </div>
