@@ -49,7 +49,7 @@ if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
             } else {
                 input.setCustomValidity('');
             }
-            if (input.name == "title" || input.name == "gender" || input.name == "producer") {
+            if (input.name == "title" || input.name == "producer") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity(input.id + ' debe contener únicamente caracteres y/o espacios');
                 }
@@ -71,8 +71,8 @@ require_once('lib/password.php');
 require_once('inc/utils.php');
 
 // define variables and set to empty values
-$titleError = $emailErr = $genderErr = $websiteErr = "";
-$newsletter = $province = $gender = $producer = $password = $direction = $city = $price = $email = $comment = $dni = $title = "";
+$titleError = $producerErr = $priceErr = "";
+$producer = $price = $title = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["title"])) {
@@ -83,14 +83,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $titleError = "Solo ser permiten letras, número o espacios";
         }
     }
-    if (empty($_POST["gender"])) {
-        $genderErr = "El género es obligatorio"; // TODO
-    } else {
-        $gender = test_input($_POST["gender"]);
-        if (!preg_match("/\\w+/", $gender)) {
-            $genderErr = "Solo ser permiten letras, número o espacios";
-        }
-    }
+//    if (empty($_POST["gender"])) {
+//        $genderErr = "El género es obligatorio"; // TODO
+//    } else {
+//        $gender = test_input($_POST["gender"]);
+//        if (!preg_match("/\\w+/", $gender)) {
+//            $genderErr = "Solo ser permiten letras, número o espacios";
+//        }
+//    }
     if (empty($_POST["producer"])) {
         $producerErr = "La productora es obligatorio"; // TODO
     } else {
@@ -114,11 +114,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     ));
 
-    $disc->insertDisc();
+    if($disc->insertDisc()){
+        $producer = $price = $title = "";
+    }
 }
 ?>
 
-<?php header_login(); ?>
+<?php header_login(); pretty_print(get_defined_vars()) ; ?>
 
 <div class="main-container">
     <main role="main" class="wrapper">
