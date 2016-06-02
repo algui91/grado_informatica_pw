@@ -26,7 +26,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!$_SESSION['is_admin']){
+if (!$_SESSION['is_admin']) {
     die('No tienes permisos para entrar en esta página');
 }
 ?>
@@ -44,49 +44,18 @@ if (!$_SESSION['is_admin']){
 
     <script type="text/javascript">
         function check(input) {
-            if (input.name == "password") {
-                if (input.validity.patternMismatch) {
-                    input.setCustomValidity('Mejora esa contraseña (Más de 8 caracteres, mayúsculas, minúsculas, números y símbolos son obligatorios)');
-                }
-                else {
-                    input.setCustomValidity('');
-                }
+            if (input.validity.valueMissing) {
+                input.setCustomValidity(input.id + ' es obligatorio');
+            } else {
+                input.setCustomValidity('');
             }
-            else if (input.name == "name" || input.name == "lastname") {
+            if (input.name == "title" || input.name == "gender" || input.name == "producer") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity(input.id + ' debe contener únicamente caracteres y/o espacios');
-                } else {
-                    input.setCustomValidity('');
                 }
-            } else if (input.name == "username") {
-                if (input.validity.patternMismatch) {
-                    input.setCustomValidity('El nombre de usuario debe contener solo carácteres y/o números.');
-                } else {
-                    input.setCustomValidity('');
-                }
-            } else if (input.name == "email") {
-                if (input.validity.patternMismatch) {
-                    input.setCustomValidity('El email introducido no es correcto');
-                } else {
-                    input.setCustomValidity('');
-                }
-            } else if (input.name == "dni") {
-                if (input.validity.patternMismatch) {
-                    input.setCustomValidity('El DNI no es correcto');
-                } else {
-                    input.setCustomValidity('');
-                }
-            } else if (input.name == "visa") {
+            } else if (input.name == "price") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('Solo se permiten números');
-                } else {
-                    input.setCustomValidity('');
-                }
-            } else if (input.name == "toc") {
-                if (input.validity.valueMissing) {
-                    input.setCustomValidity('Debes aceptar los términos y condiciones para continuar');
-                } else {
-                    input.setCustomValidity('');
                 }
             }
         }
@@ -102,15 +71,15 @@ require_once('inc/utils.php');
 
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
-$newsletter = $province = $gender = $producer = $password = $direction = $city = $price = $email = $comment = $dni = $titulo = "";
+$newsletter = $province = $gender = $producer = $password = $direction = $city = $price = $email = $comment = $dni = $title = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "Name is required"; // TODO
     } else {
-        $titulo = test_input($_POST["name"]);
+        $title = test_input($_POST["name"]);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/", $titulo)) {
+        if (!preg_match("/^[a-zA-Z ]*$/", $title)) {
             $nameErr = "Only letters and white space allowed";
         }
     }
@@ -157,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!empty($dni)) {
-        $u = new User(array(":nombre" => $titulo,
+        $u = new User(array(":nombre" => $title,
             ":apellidos" => $gender,
             ":nombreUsuario" => $producer,
             ":contrasena" => password_hash($password, PASSWORD_BCRYPT, array("cost" => 10)),
@@ -191,32 +160,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <label for="Titulo">Titulo</label>
                     <div>
-                        <input id="Titulo" name="titulo" type="text" placeholder="Titulo" required maxlength="15"
-                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)"
-                               value="<?php echo $titulo; ?>">
+                        <input id="Titulo" name="title" type="text" placeholder="Titulo" required maxlength="15"
+                               size="20" pattern="^[a-zA-Z ]*$" oninput="check(this)" oninvalid="check(this)"
+                               value="<?php echo $title; ?>">
                     </div>
 
                     <label for="Género">Género</label>
                     <div>
-                        <input id="Género" name="gender" type="text" placeholder="Género" maxlength="20"
-                               size="25" oninput="check(this)" pattern="^[a-zA-Z ]*$"
+                        <input id="Género" name="gender" type="text" placeholder="Género" required maxlength="20"
+                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="^[a-zA-Z ]*$"
                                value="<?php echo $gender; ?>">
-
-                    </div>
-
-                    <label for="Precio">Precio</label>
-                    <div>
-                        <input id="Precio" name="price" type="text" oninput="check(this)" pattern="^\d+(\.\d{1,2})?$"
-                               value="<?php echo $price; ?>"
-                               placeholder="Precio">
 
                     </div>
 
                     <label for="Productora">Productora</label>
                     <div>
                         <input id="Productora" name="producer" type="text" required pattern="^[a-zA-Z0-9]*$"
-                               oninput="check(this)"
+                               oninput="check(this)" oninvalid="check(this)"
                                placeholder="Productora" value="<?php echo $producer; ?>">
+                    </div>
+
+                    <label for="Precio">Precio</label>
+                    <div>
+                        <input id="Precio" name="price" type="text" required oninput="check(this)"
+                               oninvalid="check(this)"
+                               pattern="^\d+(\.\d{1,2})?$"
+                               value="<?php echo $price; ?>"
+                               placeholder="Precio">
+
                     </div>
 
                     <!-- Button -->
