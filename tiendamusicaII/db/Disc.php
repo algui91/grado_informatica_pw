@@ -56,7 +56,7 @@ class Disc extends DataObject
         $connection = parent::conectar();
         $sql = "SELECT * 
                 FROM " . DISC_TABLE .
-                " ORDER BY valoracion DESC";
+            " ORDER BY valoracion DESC";
 
         try {
             $stmt = $connection->prepare($sql);

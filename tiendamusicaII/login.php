@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ]);
                 $_SESSION['logged_user'] = $loginResult["nombreUsuario"];
                 $_SESSION['logged_user_id'] = $loginResult["dni"];
-                $_SESSION['is_admin'] = $loginResult["rol"] == "admin" ? true:false;
+                $_SESSION['is_admin'] = $loginResult["rol"] == "admin" ? true : false;
                 header("location: index.php");
                 $login_fail = false;
             }
