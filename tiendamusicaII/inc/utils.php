@@ -24,6 +24,11 @@ function test_input($data)
     return $data;
 }
 
+function pretty_print($var)
+{
+    highlight_string("<?php\n\$debug =\n" . var_export($var, true) . ";\n?>");
+}
+
 function header_login()
 {
     if (session_status() == PHP_SESSION_NONE) {

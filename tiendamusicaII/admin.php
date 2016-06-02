@@ -70,59 +70,41 @@ require_once('lib/password.php');
 require_once('inc/utils.php');
 
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$titleError = $emailErr = $genderErr = $websiteErr = "";
 $newsletter = $province = $gender = $producer = $password = $direction = $city = $price = $email = $comment = $dni = $title = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["name"])) {
-        $nameErr = "Name is required"; // TODO
+    if (empty($_POST["title"])) {
+        $titleError = "El título es obligatorio"; // TODO
     } else {
-        $title = test_input($_POST["name"]);
-        // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/", $title)) {
-            $nameErr = "Only letters and white space allowed";
+        $title = test_input($_POST["title"]);
+        if (!preg_match("/\\w+/", $title)) {
+            $titleError = "Solo ser permiten letras, número o espacios";
         }
     }
-    if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
+    if (empty($_POST["gender"])) {
+        $genderErr = "El género es obligatorio"; // TODO
     } else {
-        $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Invalid email format";
+        $gender = test_input($_POST["gender"]);
+        if (!preg_match("/\\w+/", $gender)) {
+            $genderErr = "Solo ser permiten letras, número o espacios";
         }
     }
-    if (!empty($_POST["dni"])) {
-        $dni = test_input($_POST["dni"]);
-    }
-    if (!empty($_POST["newsletter"])) {
-        $newsletter = test_input($_POST["newsletter"]);
-    }
-    if (!empty($_POST["province"])) {
-        $province = test_input($_POST["province"]);
-    }
-    if (!empty($_POST["lastname"])) {
-        $gender = test_input($_POST["lastname"]);
-    }
-    if (!empty($_POST["username"])) {
-        $producer = test_input($_POST["username"]);
-    }
-    if (!empty($_POST["password"])) {
-        $password = test_input($_POST["password"]);
-    }
-    if (!empty($_POST["direction"])) {
-        $direction = test_input($_POST["direction"]);
-    }
-    if (!empty($_POST["city"])) {
-        $city = test_input($_POST["city"]);
-    }
-    if (!empty($_POST["visa"])) {
-        $price = test_input($_POST["visa"]);
-    }
-    if (empty($_POST["comment"])) {
-        $comment = "";
+    if (empty($_POST["producer"])) {
+        $producerErr = "La productora es obligatorio"; // TODO
     } else {
-        $comment = test_input($_POST["comment"]);
+        $producer = test_input($_POST["producer"]);
+        if (!preg_match("/\\w+/", $producer)) {
+            $producerErr = "Solo ser permiten letras, número o espacios";
+        }
+    }
+    if (empty($_POST["price"])) {
+        $priceErr = "El precio es obligatorio"; // TODO
+    } else {
+        $price = test_input($_POST["price"]);
+        if (!preg_match("/\\d+(\\.\\d{1,2})?/", $price)) {
+            $priceErr = "El precio debe ser un número";
+        }
     }
 
     if (!empty($dni)) {
@@ -142,10 +124,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dniIsSet = $u->insertUser();
         $dni = "";
     }
+
+    pretty_print($_SESSION);
 }
 ?>
 
-<?php header_login(); ?>
+<?php header_login();?>
+
+
 
 <div class="main-container">
     <main role="main" class="wrapper">
