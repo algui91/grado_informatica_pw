@@ -12,49 +12,41 @@
 
     <script type="text/javascript">
         function check(input) {
+
+            if (input.validity.valueMissing) {
+                input.setCustomValidity(input.id + ' es obligatorio');
+            } else {
+                input.setCustomValidity('');
+            }
+
             if (input.name == "password") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('Mejora esa contraseña (Más de 8 caracteres, mayúsculas, minúsculas, números y símbolos son obligatorios)');
-                }
-                else {
-                    input.setCustomValidity('');
                 }
             }
             else if (input.name == "name" || input.name == "lastname") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity(input.id + ' debe contener únicamente caracteres y/o espacios');
-                } else {
-                    input.setCustomValidity('');
                 }
             } else if (input.name == "username") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('El nombre de usuario debe contener solo carácteres y/o números.');
-                } else {
-                    input.setCustomValidity('');
                 }
             } else if (input.name == "email") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('El email introducido no es correcto');
-                } else {
-                    input.setCustomValidity('');
                 }
             } else if (input.name == "dni") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('El DNI no es correcto');
-                } else {
-                    input.setCustomValidity('');
                 }
             } else if (input.name == "visa") {
                 if (input.validity.patternMismatch) {
                     input.setCustomValidity('Solo se permiten números');
-                } else {
-                    input.setCustomValidity('');
                 }
             } else if (input.name == "toc") {
                 if (input.validity.valueMissing) {
                     input.setCustomValidity('Debes aceptar los términos y condiciones para continuar');
-                } else {
-                    input.setCustomValidity('');
                 }
             }
         }
@@ -301,7 +293,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <div>
                             <label for="toc-0">
-                                <input type="checkbox" oninvalid="check(this)" onclick="this.setCustomValidity('')" name="toc" id="toc-0" required>
+                                <input type="checkbox" oninvalid="check(this)" onclick="this.setCustomValidity('')"
+                                       name="toc" id="toc-0" required>
                                 He leido y acepto las condiciones
                             </label>
                         </div>

@@ -26,7 +26,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!$_SESSION['is_admin']) {
+if (isset($_SESSION['is_admin']) && !$_SESSION['is_admin']) {
     die('No tienes permisos para entrar en esta página');
 }
 ?>
