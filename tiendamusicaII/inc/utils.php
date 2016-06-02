@@ -26,7 +26,9 @@ function test_input($data)
 
 function header_login()
 {
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     if (isset($_SESSION['logged_user'])) {
         ?>
         <div class="header-container">
@@ -39,6 +41,9 @@ function header_login()
                         <input type="hidden" name="logout" value="logout">
                     </form>
                 </section>
+                <?php if ($_SESSION['is_admin'])
+                    echo '<a href="/~x76625397/tiendamusicaII/admin.php">Añadir Discos</a>';
+                ?>
             </header>
         </div>
         <?php

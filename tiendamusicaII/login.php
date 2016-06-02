@@ -21,7 +21,9 @@ require_once('lib/password.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     $login_fail = true;
 
@@ -41,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ]);
                 $_SESSION['logged_user'] = $loginResult["nombreUsuario"];
                 $_SESSION['logged_user_id'] = $loginResult["dni"];
+                $_SESSION['is_admin'] = $loginResult["rol"] == "admin" ? true:false;
                 header("location: index.php");
                 $login_fail = false;
             }

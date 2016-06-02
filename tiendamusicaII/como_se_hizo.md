@@ -4,3 +4,4 @@
 - Para la sessión se ha usado session_Start
 - Se ha iterado sobre colecciones para crear la página
 - En los formularuios se ha usado html constrains, como maxlength="500", required, modificando los atributos con js
+- Para el usuario admin, se ha creado una nueva columna llamada “rol” que indica el rol de cada usuario (subscriptor/admin)
