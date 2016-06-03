@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
     $d = new Disc();
 
     if (!($disc = $d->getDisc($id))) {
-        die('El disco no existe.');
+        die('<h1>El disco no existe.</h1>');
     }
 
     $title = $disc['titulo'];
@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
     $discografy = $disc['productora'];
     $rating = $disc['valoracion'];
 } else {
-    die('Este disco no existe.');
+    die('<h1>El disco no existe.</h1>');
 }
 ?>
 <div class="main-container">
