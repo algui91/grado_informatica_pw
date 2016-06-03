@@ -38,7 +38,8 @@ header_login();
                     <header>
                         <h1><?php echo $data[0]['titulo']; ?></h1>
                     </header>
-                    <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $data[0]['id']; ?>" title="Ver Decimus">Ver</a></p>
+                    <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $data[0]['id']; ?>" title="Ver Decimus">Ver</a>
+                    </p>
                     <p><?php echo $data[0]['numComments'];
                         echo " " . $plurals; ?></p>
                 </article>
@@ -58,7 +59,8 @@ header_login();
                             </header>
                             <p><?php echo $item['numComments'];
                                 echo " " . $plurals; ?></p>
-                            <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $item['id']; ?>" title="Ver Decimus"> Ver</a></p>
+                            <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $item['id']; ?>"
+                                  title="Ver Decimus"> Ver</a></p>
                         </article>
                         <?php
                     }
