@@ -37,11 +37,12 @@ header_login();
                         <h1><?php echo $data[0]['titulo']; ?></h1>
                     </header>
                     <p><a href="epic/details.php?id=<?php echo $data[0]['id'] ?>" title="Ver Decimus">Ver</a></p>
-                    <p>15 Comentarios</p>
+                    <p><?php echo $data[0]['numComments'] ?> Comentarios</p>
                 </article>
                 <div class="featured-epic">
                     <?php
                     foreach ($data as $item) {
+                        if ($data[0] === $item) continue;
                         ?>
                         <article class="other-discs">
                             <figure>
@@ -51,10 +52,8 @@ header_login();
                             <header>
                                 <h3><?php echo $item['titulo']; ?></h3>
                             </header>
-                            <p> Comentarios
-                            <p>
-                            <p><a href="epic/details.php?id=<?php echo $item['id'] ?>" title="Ver Decimus"> Ver</a>
-                            <p>
+                            <p><?php echo $item['numComments'] ?> Comentarios</p>
+                            <p><a href="epic/details.php?id=<?php echo $item['id'] ?>" title="Ver Decimus"> Ver</a></p>
                         </article>
                         <?php
                     }

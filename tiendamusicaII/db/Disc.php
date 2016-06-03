@@ -55,9 +55,12 @@ class Disc extends DataObject
     public function getAllDiscs()
     {
         $connection = parent::conectar();
-        $sql = "SELECT * 
+
+        $sql = "SELECT *, COUNT(" . COMMENT_TABLE . ".id_disco) as numComments
                 FROM " . DISC_TABLE .
-            " ORDER BY valoracion DESC";
+            " INNER JOIN " . COMMENT_TABLE . " ON " . COMMENT_TABLE . ".id_disco = " . DISC_TABLE . ".id
+             GROUP BY " . DISC_TABLE . ".id
+              ORDER BY numComments DESC";
 
         try {
             $stmt = $connection->prepare($sql);
