@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["logout"])) {
         $_SESSION = array();
         session_destroy();
-        header("location: index.php");
+        header("Location: " . $_SERVER['HTTP_REFERER']);
     } else {
         $user = new User(array(":nombreUsuario" => test_input($_POST["username"])));
         if (($loginResult = $user->getUser()) != false) {
@@ -44,13 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['logged_user'] = $loginResult["nombreUsuario"];
                 $_SESSION['logged_user_id'] = $loginResult["dni"];
                 $_SESSION['is_admin'] = $loginResult["rol"] == "admin" ? true : false;
-                header("location: index.php");
+                header("Location: " . $_SERVER['HTTP_REFERER']);
                 $login_fail = false;
             }
         }
         if ($login_fail) {
             $_SESSION['incorrect_password'] = "Usuario o contraseña incorrectos";
-            header("location: index.php");
+            header("Location: " . $_SERVER['HTTP_REFERER']);
         }
     }
 }
