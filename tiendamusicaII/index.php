@@ -102,212 +102,64 @@ header_login();
                 <!-- <div> -->
                 <h2>Novedades por género</h2>
                 <h3>epic</h3>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
+                <?php
+                foreach ($discs as $item) {
+                    ?>
+                    <article>
+                        <div class="flexChild rowParent">
+                            <div class="flexChild">
+                                <figure>
+                                    <img src="<?php echo BASE_URL . $item['cover']; ?>" alt="Portada decimus"
+                                         height="64px"
+                                         width="64px"/>
+                                </figure>
+                            </div>
                             <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
+                                <div class="flexChild"><?php echo $item['titulo']; ?></div>
+                                <div class="flexChild columnParent">
+                                    <div class="flexChild rowParent">
+                                        <div class="flexChild"><?php echo $item['productora']; ?></div>
+                                    </div>
+                                    <div class="flexChild">Ver</div>
                                 </div>
-                                <div class="flexChild">Ver</div>
                             </div>
                         </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
-                                </div>
-                                <div class="flexChild">Ver</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
-                                </div>
-                                <div class="flexChild">Ver</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
-                                </div>
-                                <div class="flexChild">Ver</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
-                                </div>
-                                <div class="flexChild">Ver</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <div class="flexChild rowParent">
-                        <div class="flexChild">
-                            <figure>
-                                <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                     width="64px"/>
-                            </figure>
-                        </div>
-                        <div class="flexChild columnParent">
-                            <div class="flexChild">Disco</div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild rowParent">
-                                    <div class="flexChild">Autor</div>
-                                    <div class="flexChild">Reproducir</div>
-                                </div>
-                                <div class="flexChild">Ver</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                    <?php
+                }
+                ?>
 
                 <!-- </div> -->
             </section>
             <section id="latest-row">
                 <h2>Últimos por género</h2>
                 <div class="latest-container">
-                    <article>
-                        <div class="flexChild rowParent">
-                            <div class="flexChild">
-                                <figure>
-                                    <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                         width="64px"/>
-                                </figure>
-                            </div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild">Disco</div>
+                    <?php
+                    for ($i = 0; $i < $top_comments; $i++) {
+                        ?>
+                        <article>
+                            <div class="flexChild rowParent">
+                                <div class="flexChild">
+                                    <figure>
+                                        <img src="<?php echo BASE_URL . $discs[$i]['cover']; ?>" alt="Portada decimus"
+                                             height="64px"
+                                             width="64px"/>
+                                    </figure>
+                                </div>
                                 <div class="flexChild columnParent">
-                                    <div class="flexChild rowParent">
-                                        <div class="flexChild">Autor</div>
-                                        <div class="flexChild">Reproducir</div>
+                                    <div class="flexChild"><?php echo $discs[$i]['titulo']; ?></div>
+                                    <div class="flexChild columnParent">
+                                        <div class="flexChild rowParent">
+                                            <div class="flexChild"><?php echo $discs[$i]['productora']; ?></div>
+                                        </div>
+                                        <div class="flexChild">Ver</div>
                                     </div>
-                                    <div class="flexChild">Ver</div>
                                 </div>
                             </div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="flexChild rowParent">
-                            <div class="flexChild">
-                                <figure>
-                                    <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                         width="64px"/>
-                                </figure>
-                            </div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild">Disco</div>
-                                <div class="flexChild columnParent">
-                                    <div class="flexChild rowParent">
-                                        <div class="flexChild">Autor</div>
-                                        <div class="flexChild">Reproducir</div>
-                                    </div>
-                                    <div class="flexChild">Ver</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="flexChild rowParent">
-                            <div class="flexChild">
-                                <figure>
-                                    <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                         width="64px"/>
-                                </figure>
-                            </div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild">Disco</div>
-                                <div class="flexChild columnParent">
-                                    <div class="flexChild rowParent">
-                                        <div class="flexChild">Autor</div>
-                                        <div class="flexChild">Reproducir</div>
-                                    </div>
-                                    <div class="flexChild">Ver</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="flexChild rowParent">
-                            <div class="flexChild">
-                                <figure>
-                                    <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="64px"
-                                         width="64px"/>
-                                </figure>
-                            </div>
-                            <div class="flexChild columnParent">
-                                <div class="flexChild">Disco</div>
-                                <div class="flexChild columnParent">
-                                    <div class="flexChild rowParent">
-                                        <div class="flexChild">Autor</div>
-                                        <div class="flexChild">Reproducir</div>
-                                    </div>
-                                    <div class="flexChild">Ver</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
+                        <?php
+                    }
+                    ?>
                 </div>
             </section>
     </main>
