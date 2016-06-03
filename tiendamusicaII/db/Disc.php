@@ -53,7 +53,7 @@ class Disc extends DataObject
     {
         $connection = parent::conectar();
 
-        $sql = "SELECT d.titulo, d.genero, d.precio, d.productora, d.valoracion, d.cover, COUNT(c.id_disco) as numComments 
+        $sql = "SELECT d.id, d.titulo, d.genero, d.precio, d.productora, d.valoracion, d.cover, COUNT(c.id_disco) as numComments 
         FROM " . DISC_TABLE . " d 
         LEFT JOIN " . COMMENT_TABLE . " c 
         ON c.id_disco = d.id 
