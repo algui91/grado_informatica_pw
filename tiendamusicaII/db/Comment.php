@@ -47,35 +47,4 @@ class Comment extends DataObject
 
         return $result;
     }
-
-    public function getAllCommentsForDisc($disc)
-    {
-
-//        // compare if the value from $lastAccess15 is +15min in relation to the current time
-//        $lastAccess15 = '2012-06-01 00:00:00';
-//
-//        $phpDateFromMysql = strtotime( $lastAccess15 );
-//
-//        if ($phpDateFromMysql - $lastAccess15 > 900) {
-//            $lastAccess15 = date('Y-m-d H:i:s', time());
-//        }
-//
-//        echo $lastAccess15;
-
-        $connection = parent::conectar();
-        $sql = "SELECT Usuario.nombre, comentarios.fecha, comentarios.comentario 
-                FROM " . COMMENT_TABLE . " 
-                INNER JOIN Usuario ON (Usuario.dni = comentarios.id_usuario) 
-                WHERE id_disco = :disco 
-                ORDER BY comentarios.fecha DESC";
-
-        try {
-            $stmt = $connection->prepare($sql);
-            $stmt->bindValue(":disco", $disc);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
 }

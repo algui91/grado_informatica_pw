@@ -58,7 +58,7 @@ header_login();
                             </header>
                             <p><?php echo $item['numComments'];
                                 echo " " . $plurals; ?></p>
-                            <p><a href="epic/details.php?id=<?php echo $item['id'] ?>" title="Ver Decimus"> Ver</a></p>
+                            <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $item['id']; ?>" title="Ver Decimus"> Ver</a></p>
                         </article>
                         <?php
                     }

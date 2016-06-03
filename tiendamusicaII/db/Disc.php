@@ -16,6 +16,7 @@
  */
 
 require_once('DataObject.php');
+require_once('Comment.php');
 
 /**
  * Created by IntelliJ IDEA.
@@ -54,11 +55,11 @@ class Disc extends DataObject
         $connection = parent::conectar();
 
         $sql = "SELECT d.id, d.titulo, d.genero, d.precio, d.productora, d.valoracion, d.cover, COUNT(c.id_disco) as numComments 
-        FROM " . DISC_TABLE . " d 
-        LEFT JOIN " . COMMENT_TABLE . " c 
-        ON c.id_disco = d.id 
-        GROUP BY d.id 
-        ORDER BY numComments DESC";
+            FROM " . DISC_TABLE . " d 
+            LEFT JOIN " . COMMENT_TABLE . " c 
+            ON c.id_disco = d.id 
+            GROUP BY d.id 
+            ORDER BY numComments DESC";
 
         try {
             $stmt = $connection->prepare($sql);
@@ -83,6 +84,43 @@ class Disc extends DataObject
             $stmt->execute();
 
             return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    public function getComments($disc_id)
+    {
+        $connection = parent::conectar();
+        $sql = "SELECT Usuario.nombre, comentarios.fecha, comentarios.comentario 
+                FROM " . COMMENT_TABLE . " 
+                INNER JOIN Usuario ON (Usuario.dni = comentarios.id_usuario) 
+                WHERE id_disco = :disco 
+                ORDER BY comentarios.fecha DESC";
+
+        try {
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(":disco", $disc_id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    public function getTracks($id)
+    {
+        $connection = parent::conectar();
+        $sql = "SELECT cancion
+                FROM " . TRACK_TABLE .
+            " WHERE id_disco = :id";
+
+        try {
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_COLUMN);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }

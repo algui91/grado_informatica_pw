@@ -15,8 +15,6 @@
 <?php
 require_once('../inc/utils.php');
 require_once('../db/Disc.php');
-require_once('../db/Comment.php');
-require_once('../db/Track.php');
 
 header_login();
 
@@ -29,6 +27,9 @@ if (isset($_GET['id'])) {
         die('<h1>El disco no existe.</h1>');
     }
 
+    $comments = $d->getComments($id);
+    $tracks = $d->getTracks($id);
+
     $title = $disc['titulo'];
     $gender = $disc['genero'];
     $price = $disc['precio'];
@@ -36,8 +37,6 @@ if (isset($_GET['id'])) {
     $rating = $disc['valoracion'];
     $cover = $disc['cover'];
 
-    $tracks = new Track();
-    $tracks = $tracks->getTracks($id);
 } else {
     die('<h1>El disco no existe.</h1>');
 }
@@ -134,19 +133,16 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                 </article>
-                <?php
-                $allComments = new Comment();
-                ?>
                 <section id="comment_section">
                     <h1>Comentarios</h1>
                     <?php
-                    foreach ($allComments->getAllCommentsForDisc($id) as $item) {
+                    foreach ($comments as $comment) {
                     ?>
                     <header id="comment_header">
-                        <p><?php echo "<strong>" . $item['nombre'] . "</strong>" . " el " . $item['fecha'] . " comentó:"; ?></p>
+                        <p><?php echo "<strong>" . $comment['nombre'] . "</strong>" . " el " . $comment['fecha'] . " comentó:"; ?></p>
                     </header>
                     <section>
-                        <p><em><?php echo $item['comentario']; ?></em></p>
+                        <p><em><?php echo $comment['comentario']; ?></em></p>
                     </section>
                 </section>
             <?php

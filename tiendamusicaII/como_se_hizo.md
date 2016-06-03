@@ -8,3 +8,4 @@
 - PAra depurar pretty_print
 - Plurales para epic.php
 - En index se muestran los 3 con más comentarios
+- Tooltips en index y detail.

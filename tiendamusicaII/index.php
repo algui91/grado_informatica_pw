@@ -15,7 +15,6 @@
 <?php
 require_once('inc/utils.php');
 require_once('db/Disc.php');
-require_once('db/Track.php');
 
 header_login();
 ?>
@@ -26,16 +25,16 @@ header_login();
                 <?php
                 $discs = new Disc();
                 $discs = $discs->getAllDiscs();
+
                 if (count($discs) >= 3) {
                     $top_comments = 3;
                 } else {
                     $top_comments = count($discs);
                 }
 
-                $tracks = new Track();
                 for ($i = 0; $i < $top_comments; $i++) {
                     $plurals = $discs[$i]['numComments'] == 1 ? " Comentario " : " Comentarios ";
-                    $tracklist = $tracks->getTracks($discs[$i]['id']);
+                    $tracklist = call_user_func(array("Disc", 'getTracks'), $discs[$i]['id']);
                     ?>
                     <article>
                         <header>
@@ -61,6 +60,8 @@ header_login();
                             <h2>Comentarios</h2>
                             <p><?php echo $discs[$i]['numComments'];
                                 echo " " . $plurals; ?></p>
+                            <p><a href="<?php echo BASE_URL . "epic/details.php?id=" . $discs[$i]['id']; ?>"
+                                  title="Ver Decimus"> Ver disco</a></p>
                         </section>
                     </article>
                     <?php
