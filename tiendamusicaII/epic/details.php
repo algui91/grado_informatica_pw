@@ -1,17 +1,3 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
-
 <?php
 require_once('../inc/utils.php');
 require_once('../db/Disc.php');
@@ -40,7 +26,49 @@ if (isset($_GET['id'])) {
 } else {
     die('<h1>El disco no existe.</h1>');
 }
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_comment = "";
+    $commentError = "";
+    if (empty($_POST["comment"])) {
+        $commentError = "Debes escribir un comentario";
+    } else {
+        $user_comment = test_input($_POST["comment"]);
+        $commentError = "";
+    }
+
+    if (!empty($user_comment)) {
+        $comnt = new Comment(array(
+            ":id_user" => $_SESSION["logged_user_id"],
+            ":id_disc" => $id,
+            ":comment" => $user_comment,
+        ));
+        $comnt->insertComment();
+    }
+    $user_comment = "";
+
+    pretty_print($_POST);
+
+    // Redirect to this page.
+    header("Location: " . $_SERVER['REQUEST_URI']);
+    exit();
+}
 ?>
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
 <div class="main-container">
     <main role="main" class="wrapper">
         <h2>Secciones | Generos: <a href="../epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
@@ -146,14 +174,27 @@ if (isset($_GET['id'])) {
                         <p><em><?php echo $comment['comentario']; ?></em></p>
                     </section>
                 </section>
-            <?php
-            }
-            ?>
+                <?php
+                }
+                ?>
                 <form method="post"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $id; ?>">
                     <?php
                     if (isset($_SESSION["logged_user"])) {
-                        comment_form($id);
+                        ?>
+                        <h1>Dejanos un comentario</h1>
+                        <section id="comment_form">
+                            <span><?php if (!empty($commentError)) echo $commentError; ?></span>
+                            <div>
+            <textarea rows="10" oninput="this.setCustomValidity('')"
+                      oninvalid="this.validity.valueMissing ? this.setCustomValidity('Debes introducir un comentario') : this.setCustomValidity('')"
+                      name="comment" id="comment" placeholder="Comentario" required></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" name="submit" value="Add Comment">
+                            </div>
+                        </section>
+                        <?php
                     } else {
                         echo "<h1>Logeate para comentar</h1>";
                     }
