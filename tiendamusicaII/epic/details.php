@@ -16,6 +16,7 @@
 require_once('../inc/utils.php');
 require_once('../db/Disc.php');
 require_once('../db/Comment.php');
+require_once('../db/Track.php');
 
 header_login();
 
@@ -33,6 +34,9 @@ if (isset($_GET['id'])) {
     $price = $disc['precio'];
     $discografy = $disc['productora'];
     $rating = $disc['valoracion'];
+
+    $tracks = new Track();
+    $tracks = $tracks->getTracks($id);
 } else {
     die('<h1>El disco no existe.</h1>');
 }
@@ -55,14 +59,15 @@ if (isset($_GET['id'])) {
                             <img src="../img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="512px"
                                  width="512"/>
                             <span class="tooltiptext">
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
-                                Tooltip text<br/>
+                                <?php
+                                if ($tracks){
+                                    $trackno = 1;
+                                    foreach ($tracks as $t){
+                                        echo $trackno . ". " . $t . "<br/>";
+                                        $trackno += 1;
+                                    }
+                                }
+                                ?>
                             </span>
                         </figure>
                         <p>Género: <?php echo $gender; ?></p>

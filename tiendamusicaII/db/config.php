@@ -21,4 +21,5 @@ define("DB_PASS", "x76625397");
 define("USER_TABLE", "Usuario");
 define("DISC_TABLE", "Disco");
 define("COMMENT_TABLE", "comentarios");
+define("TRACK_TABLE", "canciones");
 ?>
