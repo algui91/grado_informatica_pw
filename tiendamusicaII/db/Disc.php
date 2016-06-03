@@ -46,9 +46,9 @@ class Disc extends DataObject
         } catch (PDOException $e) {
             die("Consulta fallida: " . $e->getMessage());
         }
-        
+
         parent::desconectar($connection);
-        
+
         return $result;
     }
 
@@ -64,6 +64,24 @@ class Disc extends DataObject
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    public function getDisc($id)
+    {
+        $connection = parent::conectar();
+        $sql = "SELECT * 
+                FROM " . DISC_TABLE .
+            " WHERE id = :id";
+
+        try {
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }

@@ -28,7 +28,6 @@ header_login();
                 <?php
                 $discs = new Disc();
                 $data = $discs->getAllDiscs(); // TODO, get only title, add photo, check not empty
-                $_SESSION['data'] = $data;
                 ?>
                 <article class="best-seller">
                     <figure>

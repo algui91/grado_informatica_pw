@@ -14,29 +14,27 @@
 
 <?php
 require_once('../inc/utils.php');
+require_once('../db/Disc.php');
 require_once('../db/Comment.php');
 
 header_login();
 
-function search($data, $id)
-{
-    foreach ($data as $disc) {
-        if ($disc['id'] === $id)
-            return $disc;
-    }
-}
-
-if (isset($_SESSION['data'])) {
-    $data = $_SESSION['data'];
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $current_disc = search($data, $id);
+    $d = new Disc();
 
-    $title = $current_disc['titulo'];
-    $gender = $current_disc['genero'];
-    $price = $current_disc['precio'];
-    $discografy = $current_disc['productora'];
-    $rating = $current_disc['valoracion'];
+    if (!($disc = $d->getDisc($id))) {
+        die('El disco no existe.');
+    }
+
+    $title = $disc['titulo'];
+    $gender = $disc['genero'];
+    $price = $disc['precio'];
+    $discografy = $disc['productora'];
+    $rating = $disc['valoracion'];
+} else {
+    die('Este disco no existe.');
 }
 ?>
 <div class="main-container">
