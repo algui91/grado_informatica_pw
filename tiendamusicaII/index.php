@@ -24,8 +24,12 @@ header_login();
                 <?php
                 $discs = new Disc();
                 $discs = $discs->getAllDiscs();
-
-                for ($i = 0; $i < 3; $i++) {
+                if (count($discs) >= 3) {
+                    $top_comments = 3;
+                } else {
+                    $top_comments = count($discs);
+                }
+                for ($i = 0; $i < $top_comments; $i++) {
                     $plurals = $discs[$i]['numComments'] == 1 ? " Comentario " : " Comentarios ";
                     ?>
                     <article>
@@ -68,8 +72,8 @@ header_login();
                         <h3>Discos más comentados</h3>
                         <ul>
                             <?php
-                            foreach ($discs as $d) {
-                                echo "<li>" . $d['titulo'] . "</li>";
+                            for ($i = 0; $i < $top_comments; $i++) {
+                                echo "<li>" . $discs[$i]['titulo'] . "</li>";
                             }
                             ?>
                         </ul>
@@ -85,13 +89,11 @@ header_login();
                     <section>
                         <h3>Otros discos comentados</h3>
                         <ul>
-                            <li>Otros discos 1</li>
-                            <li>Otros discos 2</li>
-                            <li>Otros discos 3</li>
-                            <li>Otros discos 4</li>
-                            <li>Otros discos 5</li>
-                            <li>Otros discos 6</li>
-                            <li>Otros discos 7</li>
+                            <?php
+                            foreach ($discs as $d) {
+                                echo "<li>" . $d['titulo'] . "</li>";
+                            }
+                            ?>
                         </ul>
                     </section>
                 </div> <!-- featured -->
