@@ -108,6 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($disc->insertDisc()) {
         $producer = $price = $title = "";
+        header("Location: " . $_SERVER['REQUEST_URI']);
+        exit();
     }
 }
 ?>
@@ -127,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <label for="Titulo">Titulo</label>
                     <div>
-                        <input id="Titulo" name="title" type="text" placeholder="Titulo" required maxlength="15"
+                        <input id="Titulo" name="title" type="text" placeholder="Titulo" required maxlength="50"
                                size="20" pattern="^[\w\d ]*$" oninput="check(this)" oninvalid="check(this)"
                                value="<?php echo $title; ?>">
                     </div>
