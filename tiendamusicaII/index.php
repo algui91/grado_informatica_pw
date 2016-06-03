@@ -15,6 +15,8 @@
 <?php
 require_once('inc/utils.php');
 require_once('db/Disc.php');
+require_once('db/Track.php');
+
 header_login();
 ?>
 <div class="main-container">
@@ -29,16 +31,30 @@ header_login();
                 } else {
                     $top_comments = count($discs);
                 }
+
+                $tracks = new Track();
                 for ($i = 0; $i < $top_comments; $i++) {
                     $plurals = $discs[$i]['numComments'] == 1 ? " Comentario " : " Comentarios ";
+                    $tracklist = $tracks->getTracks($discs[$i]['id']);
                     ?>
                     <article>
                         <header>
                             <h1><?php echo $discs[$i]['titulo']; ?></h1>
-                            <figure>
+                            <figure class="tooltip">
                                 <img src="<?php echo BASE_URL . $discs[$i]['cover']; ?>" alt="Portada decimus"
                                      height="256px"
                                      width="256px"/>
+                                <span class="tooltiptext">
+                                <?php
+                                if ($tracklist) {
+                                    $trackno = 1;
+                                    foreach ($tracklist as $t) {
+                                        echo $trackno . ". " . $t . "<br/>";
+                                        $trackno += 1;
+                                    }
+                                }
+                                ?>
+                            </span>
                             </figure>
                         </header>
                         <section>
