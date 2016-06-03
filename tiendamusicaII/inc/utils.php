@@ -98,6 +98,17 @@ function comment_form($id)
             $comnt->insertComment();    
         }
         $user_comment = "";
+
+        pretty_print($_POST);
+//
+//        if ($_POST) {
+//            // Execute code (such as database updates) here.
+//
+//            // Redirect to this page.
+//            header("Location: " . $_SERVER['REQUEST_URI']);
+//            exit();
+//        }
+
     }
     ?>
     <h1>Dejanos un comentario</h1>
