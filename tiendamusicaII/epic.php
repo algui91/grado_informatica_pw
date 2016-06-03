@@ -28,6 +28,7 @@ header_login();
                 <?php
                 $discs = new Disc();
                 $data = $discs->getAllDiscs(); // TODO, get only title, add photo, check not empty
+                $plurals = $data[0]['numComments'] == 1 ? " Comentario " : " Comentarios ";
                 ?>
                 <article class="best-seller">
                     <figure>
@@ -37,12 +38,14 @@ header_login();
                         <h1><?php echo $data[0]['titulo']; ?></h1>
                     </header>
                     <p><a href="epic/details.php?id=<?php echo $data[0]['id'] ?>" title="Ver Decimus">Ver</a></p>
-                    <p><?php echo $data[0]['numComments'] ?> Comentarios</p>
+                    <p><?php echo $data[0]['numComments'];
+                        echo " " . $plurals; ?></p>
                 </article>
                 <div class="featured-epic">
                     <?php
                     foreach ($data as $item) {
                         if ($data[0] === $item) continue;
+                        $plurals = $item['numComments'] == 1 ? " Comentario " : " Comentarios ";
                         ?>
                         <article class="other-discs">
                             <figure>
@@ -52,7 +55,8 @@ header_login();
                             <header>
                                 <h3><?php echo $item['titulo']; ?></h3>
                             </header>
-                            <p><?php echo $item['numComments'] ?> Comentarios</p>
+                            <p><?php echo $item['numComments'];
+                                echo " " . $plurals; ?></p>
                             <p><a href="epic/details.php?id=<?php echo $item['id'] ?>" title="Ver Decimus"> Ver</a></p>
                         </article>
                         <?php
