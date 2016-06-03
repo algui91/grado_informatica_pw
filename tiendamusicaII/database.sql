@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2016 at 11:54 AM
+-- Generation Time: Jun 03, 2016 at 02:24 PM
 -- Server version: 5.5.47-MariaDB
 -- PHP Version: 5.4.16
 
@@ -217,22 +217,23 @@ CREATE TABLE IF NOT EXISTS `Disco` (
   `genero` varchar(100) NOT NULL,
   `precio` double NOT NULL,
   `productora` varchar(100) NOT NULL,
-  `valoracion` tinyint(2) NOT NULL
+  `valoracion` tinyint(2) NOT NULL,
+  `cover` varchar(100) DEFAULT 'img/default.jpg'
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Disco`
 --
 
-INSERT INTO `Disco` (`id`, `titulo`, `genero`, `precio`, `productora`, `valoracion`) VALUES
-(1, 'Chronicles', 'EPIC', 10, 'Audiomachine', 5),
-(2, 'Epica', 'EPIC', 20, 'Audiomachine', 5),
-(3, 'Helio', 'EPIC', 10, 'Audiomachine', 2),
-(4, 'Tree Of Life', 'EPIC', 2, 'Audiomachine', 5),
-(5, 'Existence', 'EPIC', 10, 'Audiomachine', 2),
-(6, 'Invincible', 'EPIC', 10, 'Two Steps From Hell', 2),
-(7, 'Illusions', 'EPIC', 10, 'Two Steps From Hell', 5),
-(9, 'Desde Form', 'EPIC', 100, 'Productora desde FORM', 0);
+INSERT INTO `Disco` (`id`, `titulo`, `genero`, `precio`, `productora`, `valoracion`, `cover`) VALUES
+(1, 'Chronicles', 'EPIC', 10, 'Audiomachine', 5, 'img/chronicles.jpg'),
+(2, 'Epica', 'EPIC', 20, 'Audiomachine', 5, 'img/epica.jpg'),
+(3, 'Helios', 'EPIC', 10, 'Audiomachine', 2, 'img/helios.jpg'),
+(4, 'Tree Of Life', 'EPIC', 2, 'Audiomachine', 5, 'img/treeoflife.jpg'),
+(5, 'Existence', 'EPIC', 10, 'Audiomachine', 2, 'img/existence.jpg'),
+(6, 'Invincible', 'EPIC', 10, 'Two Steps From Hell', 2, 'img/invincible.jpg'),
+(7, 'Illusions', 'EPIC', 10, 'Two Steps From Hell', 5, 'img/illusions.jpg'),
+(9, 'Desde Form', 'EPIC', 100, 'Productora desde FORM', 0, 'img/default.jpg');
 
 -- --------------------------------------------------------
 

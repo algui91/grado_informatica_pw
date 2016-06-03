@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+define("BASE_URL", "//bahia.ugr.es/~x76625397/tiendamusicaII/");
+
 function test_input($data)
 {
     $data = trim($data);

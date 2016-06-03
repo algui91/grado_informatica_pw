@@ -26,12 +26,9 @@ require_once('DataObject.php');
 class Disc extends DataObject
 {
     protected $datos = array(
-//        ":id" => "",
         ":titulo" => "",
-//        ":genero" => "",
         ":precio" => "",
         ":productora" => "",
-//        ":valoracion" => "",
     );
 
     public function insertDisc()
@@ -56,11 +53,12 @@ class Disc extends DataObject
     {
         $connection = parent::conectar();
 
-        $sql = "SELECT *, COUNT(" . COMMENT_TABLE . ".id_disco) as numComments
-                FROM " . DISC_TABLE .
-            " INNER JOIN " . COMMENT_TABLE . " ON " . COMMENT_TABLE . ".id_disco = " . DISC_TABLE . ".id
-             GROUP BY " . DISC_TABLE . ".id
-              ORDER BY numComments DESC";
+        $sql = "SELECT d.titulo, d.genero, d.precio, d.productora, d.valoracion, d.cover, COUNT(c.id_disco) as numComments 
+        FROM " . DISC_TABLE . " d 
+        LEFT JOIN " . COMMENT_TABLE . " c 
+        ON c.id_disco = d.id 
+        GROUP BY d.id 
+        ORDER BY numComments DESC";
 
         try {
             $stmt = $connection->prepare($sql);
