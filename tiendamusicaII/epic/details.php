@@ -27,7 +27,6 @@ if (isset($_GET['id'])) {
     die('<h1>El disco no existe.</h1>');
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_comment = "";
     $commentError = "";
@@ -47,8 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $comnt->insertComment();
     }
     $user_comment = "";
-
-    pretty_print($_POST);
 
     // Redirect to this page.
     header("Location: " . $_SERVER['REQUEST_URI']);

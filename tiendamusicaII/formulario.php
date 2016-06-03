@@ -138,6 +138,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $dniIsSet = $u->insertUser();
         $dni = "";
+        if (!$dniIsSet) {
+            header("Location: " . $_SERVER['REQUEST_URI']);
+            exit();
+        }
     }
 }
 ?>
