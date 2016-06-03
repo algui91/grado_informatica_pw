@@ -14,58 +14,39 @@
 
 <?php
 require_once('inc/utils.php');
+require_once('db/Disc.php');
 header_login();
 ?>
-
 <div class="main-container">
-    <!-- <aside class="ad">
-      <h1>ANUNCIO</h1>
-    </aside> -->
     <main role="main" class="wrapper">
         <div class="flex-container">
             <section class="new-container">
-                <article>
-                    <header>
-                        <h1>Decimus</h1>
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px"
-                                 width="256px"/>
-                        </figure>
-                    </header>
-                    <section>
-                        <h2>Comentarios</h2>
-                        <p>15 comentarios
-                        <p>
-                    </section>
-                </article>
-                <article>
-                    <header>
-                        <h1>Decimus</h1>
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px"
-                                 width="256px"/>
-                        </figure>
-                    </header>
-                    <section>
-                        <h2>Comentarios</h2>
-                        <p>15 comentarios
-                        <p>
-                    </section>
-                </article>
-                <article>
-                    <header>
-                        <h1>Decimus</h1>
-                        <figure>
-                            <img src="img/decimus_20161008/disk.jpeg" alt="Portada decimus" height="256px"
-                                 width="256px"/>
-                        </figure>
-                    </header>
-                    <section>
-                        <h2>Comentarios</h2>
-                        <p>15 comentarios
-                        <p>
-                    </section>
-                </article>
+                <?php
+                $discs = new Disc();
+                $discs = $discs->getAllDiscs();
+
+                for ($i = 0; $i < 3; $i++) {
+                    $plurals = $discs[$i]['numComments'] == 1 ? " Comentario " : " Comentarios ";
+                    ?>
+                    <article>
+                        <header>
+                            <h1><?php echo $discs[$i]['titulo']; ?></h1>
+                            <figure>
+                                <img src="<?php echo BASE_URL . $discs[$i]['cover']; ?>" alt="Portada decimus"
+                                     height="256px"
+                                     width="256px"/>
+                            </figure>
+                        </header>
+                        <section>
+                            <h2>Comentarios</h2>
+                            <p><?php echo $discs[$i]['numComments'];
+                                echo " " . $plurals; ?></p>
+                        </section>
+                    </article>
+                    <?php
+                }
+                ?>
+
             </section>
             <section id="left-column">
                 <h2>Secciones | Generos: <a href="epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
@@ -86,13 +67,11 @@ header_login();
                     <section>
                         <h3>Discos más comentados</h3>
                         <ul>
-                            <li>Disco 1</li>
-                            <li>Disco 2</li>
-                            <li>Disco 3</li>
-                            <li>Disco 4</li>
-                            <li>Disco 5</li>
-                            <li>Disco 6</li>
-                            <li>Disco 7</li>
+                            <?php
+                            foreach ($discs as $d) {
+                                echo "<li>" . $d['titulo'] . "</li>";
+                            }
+                            ?>
                         </ul>
                     </section>
                     <section>

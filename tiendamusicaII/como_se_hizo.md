@@ -7,3 +7,4 @@
 - Para el usuario admin, se ha creado una nueva columna llamada “rol” que indica el rol de cada usuario (subscriptor/admin)
 - PAra depurar pretty_print
 - Plurales para epic.php
+- En index se muestran los 3 con más comentarios
