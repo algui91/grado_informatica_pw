@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2016 at 06:50 PM
+-- Generation Time: Jun 03, 2016 at 06:52 PM
 -- Server version: 5.5.47-MariaDB
 -- PHP Version: 5.4.16
 
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `id_disco` int(11) NOT NULL,
   `comentario` text NOT NULL,
   `fecha` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comentarios`
@@ -208,7 +208,9 @@ INSERT INTO `comentarios` (`id_comentario`, `id_usuario`, `id_disco`, `comentari
 (13, '11111111A', 5, 'Un comentario de un usuario distinto', '2016-06-03 20:47:04'),
 (14, '11111111A', 1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, magni, quo? Adipisci cupiditate excepturi fugit, in iusto maiores modi necessitatibus nesciunt numquam porro provident quia quidem ut vel voluptas voluptate?', '2016-06-03 20:47:57'),
 (15, '11111111A', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare quam leo, sit amet rutrum mi viverra quis. Nulla facilisi. Proin imperdiet risus neque, et laoreet nulla dictum nec. Morbi dui ex, luctus ac lacinia eget, feugiat at libero. In tempor egestas bibendum. Fusce et pretium sapien, eget efficitur nisl. Integer quis ipsum a quam blandit consectetur.\r\n\r\nUt molestie suscipit purus quis aliquam. Nam ligula urna, scelerisque efficitur lacus sit amet, bibendum congue nunc. Donec eu nisi euismod, rutrum lorem a, ornare mi. Quisque commodo ipsum libero, at porttitor libero malesuada eu. Curabitur non justo nec ex congue commodo sit amet in metus. Nam quis massa in ligula interdum mattis. Maecenas rhoncus sapien quis consectetur consequat. Integer placerat semper feugiat. In nec tellus id quam mollis dignissim id vel dui.\r\n\r\nNam eu velit sed turpis molestie commodo nec vel dui. Pellentesque vel congue odio. Phasellus porta rutrum libero, nec semper orci congue id. In egestas ex a dolor efficitur, ut luctus felis posuere. Curabitur quis erat eros. Mauris eget lectus vel neque iaculis interdum venenatis a justo. Fusce sagittis mauris nec dapibus ultricies. Maecenas nec risus quam.\r\n\r\nAenean aliquam ipsum et eros gravida malesuada. Aliquam sollicitudin quam sed lectus posuere sagittis. Nam dictum efficitur metus, at viverra massa dignissim eu. Donec tortor nunc, pharetra vitae diam nec, laoreet feugiat urna. Etiam neque dui, blandit nec aliquam varius, elementum id nulla. Integer vitae venenatis dolor, non ornare turpis. Morbi eu libero leo. Cras feugiat, quam sed sagittis convallis, orci ligula accumsan eros, quis dictum nulla tellus sit amet felis. Donec hendrerit vitae elit quis mollis. Aliquam suscipit pretium sem. Proin ut ex non metus tempor varius. Nulla facilisi. Pellentesque vitae tortor et sapien vehicula fringilla quis ut ex.\r\n\r\nPraesent vel neque imperdiet, ultrices augue eu, rhoncus est. Praesent fermentum consectetur libero eget mattis. Donec condimentum massa vitae interdum dignissim. Nunc sapien ligula, dictum vel molestie eu, varius at erat. Suspendisse potenti. Nullam cursus, eros vel interdum facilisis, metus turpis venenatis lorem, ut finibus libero ipsum quis nunc. Proin rhoncus feugiat feugiat. Sed nec lacinia lorem, lacinia imperdiet risus.\r\n\r\nIn sed tortor sem. Vivamus id mi rutrum, ultrices ante a, sollicitudin urna. Sed maximus odio ac justo egestas ultrices. Curabitur porttitor dui in libero porttitor rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur feugiat urna sed lacus interdum porttitor. Proin vel sapien est. Nullam dignissim rhoncus turpis, et egestas tortor rutrum eu. Mauris eu leo suscipit enim scelerisque aliquet. Quisque a sapien non justo interdum fermentum. Cras ultrices nulla et metus congue lacinia.\r\n\r\nNullam vulputate ligula diam, in fermentum dui venenatis sed. Nullam sollicitudin rutrum dui id sodales. Donec ac est fermentum, venenatis orci eget, ornare sem. Morbi vitae risus feugiat, ultricies nisl nec, varius nibh. Phasellus turpis magna, vulputate mollis mi eu, dignissim feugiat turpis. Nulla pharetra gravida augue, vel lacinia diam ullamcorper in. Aenean quis interdum erat, finibus feugiat dui. Phasellus viverra sapien sed finibus ultricies. Vivamus ut sodales nisl, eu dignissim libero. Mauris in nulla vitae magna consectetur sollicitudin non id purus. Sed ultricies, libero at luctus euismod, libero diam scelerisque augue, nec bibendum purus dolor quis diam.\r\n\r\nEtiam viverra lorem ut ex malesuada pretium. Duis eu nisi venenatis, dapibus nulla ut, tristique odio. Vestibulum sed lectus justo. Nullam sed turpis vel felis malesuada ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tincidunt leo id condimentum lacinia. Quisque vitae pretium risus. Nulla quis urna aliquam, vehicula justo quis, cursus eros. Quisque tincidunt pharetra molestie. Donec mattis neque et lobortis scelerisque.\r\n\r\nEtiam auctor sit amet ipsum ut elementum. Duis ut dui mauris. Nullam hendrerit est at dictum ultricies. Etiam feugiat quam ac ornare cursus. Pellentesque vestibulum lacus non sem consequat semper. Nullam diam justo, venenatis pretium leo in, sodales vestibulum eros. Vestibulum nunc lorem, tincidunt quis finibus ut, dapibus id tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eu laoreet purus.\r\n\r\nAenean porttitor enim quis velit venenatis, at condimentum orci luctus. Integer eget mauris at ligula pretium facilisis. Aliquam at dui rutrum, tincidunt mi at, accumsan odio. Ut ac lobortis est. Integer posuere eget diam ut sagittis. Nullam elementum semper erat, at mattis nisi ornare non. Integer lobortis bibendum nisi, quis eleifend quam convallis ut. Morbi dictum semper lacus, a finibus elit pulvinar eu. Etiam dui tellus, accumsan eu dapibus non, eleifend pellentesque dolor. Praesent at posuere eros. Sed porttitor sapien est, et pretium dui aliquam id. Praesent commodo varius nunc, at hendrerit lectus accumsan at. In eget consequat tortor. Etiam ut nulla ipsum. Sed iaculis eros nec mollis luctus.', '2016-06-03 20:48:35'),
-(16, '1', 5, 'Comentario del Administrador', '2016-06-03 20:50:16');
+(16, '1', 5, 'Comentario del Administrador', '2016-06-03 20:50:16'),
+(17, '1', 10, 'TambiÃ©n se puede comentar en discos creados por el administrador desde la web.', '2016-06-03 20:51:48'),
+(18, '11111111A', 10, 'Lo usuarios normales tambiÃ©n pueden', '2016-06-03 20:52:08');
 
 -- --------------------------------------------------------
 
@@ -224,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `Disco` (
   `productora` varchar(100) NOT NULL,
   `valoracion` tinyint(2) NOT NULL,
   `cover` varchar(100) DEFAULT 'img/default.jpg'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Disco`
@@ -238,7 +240,8 @@ INSERT INTO `Disco` (`id`, `titulo`, `genero`, `precio`, `productora`, `valoraci
 (5, 'Existence', 'EPIC', 10, 'Audiomachine', 2, 'img/existence.jpg'),
 (6, 'Invincible', 'EPIC', 10, 'Two Steps From Hell', 2, 'img/invincible.jpg'),
 (7, 'Illusions', 'EPIC', 10, 'Two Steps From Hell', 5, 'img/illusions.jpg'),
-(9, 'Desde Form', 'EPIC', 100, 'Productora desde FORM', 0, 'img/default.jpg');
+(9, 'Desde Form', 'EPIC', 100, 'Productora desde FORM', 0, 'img/default.jpg'),
+(10, 'Titulo Del disco desde Formulario', 'EPIC', 10, 'Productora desde Form', 0, 'img/default.jpg');
 
 -- --------------------------------------------------------
 
@@ -316,12 +319,12 @@ ALTER TABLE `canciones`
 -- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `Disco`
 --
 ALTER TABLE `Disco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --
