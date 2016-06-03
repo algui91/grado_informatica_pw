@@ -83,14 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $titleError = "Solo ser permiten letras, número o espacios";
         }
     }
-//    if (empty($_POST["gender"])) {
-//        $genderErr = "El género es obligatorio"; // TODO
-//    } else {
-//        $gender = test_input($_POST["gender"]);
-//        if (!preg_match("/\\w+/", $gender)) {
-//            $genderErr = "Solo ser permiten letras, número o espacios";
-//        }
-//    }
     if (empty($_POST["producer"])) {
         $producerErr = "La productora es obligatorio"; // TODO
     } else {
@@ -139,14 +131,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                size="20" pattern="^[\w\d ]*$" oninput="check(this)" oninvalid="check(this)"
                                value="<?php echo $title; ?>">
                     </div>
-
-                    <!--                    <label for="Género">Género</label>-->
-                    <!--                    <div>-->
-                    <!--                        <input id="Género" name="gender" type="text" placeholder="Género" required maxlength="20"-->
-                    <!--                               size="25" oninput="check(this)" oninvalid="check(this)" pattern="\w+"-->
-                    <!--                               value="--><?php //echo $gender; ?><!--">-->
-                    <!---->
-                    <!--                    </div>-->
 
                     <label for="Productora">Productora</label>
                     <div>

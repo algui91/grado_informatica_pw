@@ -78,27 +78,26 @@ function header_login()
 
 function comment_form($id)
 {
-    $comment = "";
+    $user_comment = "";
     $commentError = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["comment"])) {
             $commentError = "Debes escribir un comentario";
         } else {
-            $comment = test_input($_POST["comment"]);
+            $user_comment = test_input($_POST["comment"]);
             $commentError = "";
         }
 
-
-        if (!empty($comment)) {
+        if (!empty($user_comment)) {
             $comnt = new Comment(array(
                 ":id_user" => $_SESSION["logged_user_id"],
                 ":id_disc" => $id,
-                ":comment" => $comment,
+                ":comment" => $user_comment,
             ));
-            $comnt->insertComment();
+            $comnt->insertComment();    
         }
-        $comment = "";
+        $user_comment = "";
     }
     ?>
     <h1>Dejanos un comentario</h1>
