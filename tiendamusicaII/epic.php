@@ -32,7 +32,8 @@ header_login();
                 ?>
                 <article class="best-seller">
                     <figure>
-                        <img src="<?php echo BASE_URL . $data[0]['cover'];?>" alt="Portada decimus" height="256px" width="256px"/>
+                        <img src="<?php echo BASE_URL . $data[0]['cover']; ?>" alt="Portada decimus" height="256px"
+                             width="256px"/>
                     </figure>
                     <header>
                         <h1><?php echo $data[0]['titulo']; ?></h1>
@@ -49,7 +50,7 @@ header_login();
                         ?>
                         <article class="other-discs">
                             <figure>
-                                <img src="<?php echo BASE_URL . $item['cover'];?>" alt="Portada decimus" height="128px"
+                                <img src="<?php echo BASE_URL . $item['cover']; ?>" alt="Portada decimus" height="128px"
                                      width="128px"/>
                             </figure>
                             <header>
@@ -72,7 +73,8 @@ header_login();
                         <div class="flexChild rowParent">
                             <div class="flexChild">
                                 <figure>
-                                    <img src="<?php echo BASE_URL . $item['cover'];?>" alt="Portada decimus" height="64px"
+                                    <img src="<?php echo BASE_URL . $item['cover']; ?>" alt="Portada decimus"
+                                         height="64px"
                                          width="64px"/>
                                 </figure>
                             </div>

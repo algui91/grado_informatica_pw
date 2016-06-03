@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     ));
 
-    if($disc->insertDisc()){
+    if ($disc->insertDisc()) {
         $producer = $price = $title = "";
     }
 }

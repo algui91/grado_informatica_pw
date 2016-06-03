@@ -57,13 +57,13 @@ if (isset($_GET['id'])) {
                     <div class="disc-left">
                         <h1><?php echo $discografy; ?></h1>
                         <figure class="tooltip">
-                            <img src="<?php echo BASE_URL . $cover;?>" alt="Portada decimus" height="512px"
+                            <img src="<?php echo BASE_URL . $cover; ?>" alt="Portada decimus" height="512px"
                                  width="512"/>
                             <span class="tooltiptext">
                                 <?php
-                                if ($tracks){
+                                if ($tracks) {
                                     $trackno = 1;
-                                    foreach ($tracks as $t){
+                                    foreach ($tracks as $t) {
                                         echo $trackno . ". " . $t . "<br/>";
                                         $trackno += 1;
                                     }
