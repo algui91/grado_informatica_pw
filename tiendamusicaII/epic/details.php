@@ -59,7 +59,7 @@ if (isset($_GET['id'])) {
                         <figure class="tooltip">
                             <img src="<?php echo BASE_URL . $cover; ?>" alt="Portada decimus" height="512px"
                                  width="512"/>
-                            <span class="tooltiptext">
+                            <span class="tooltiptex-details">
                                 <?php
                                 if ($tracks) {
                                     $trackno = 1;
