@@ -61,6 +61,7 @@ if (isset($_GET['id'])) {
                             <span class="tooltiptex-details">
                                 <?php
                                 if ($tracks) {
+                                    echo "<h1>Lista de canciones</h1>";
                                     $trackno = 1;
                                     foreach ($tracks as $t) {
                                         echo $trackno . ". " . $t . "<br/>";

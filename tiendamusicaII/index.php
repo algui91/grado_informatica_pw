@@ -46,6 +46,7 @@ header_login();
                                 <span class="tooltiptext">
                                 <?php
                                 if ($tracklist) {
+                                    echo "<h1>Lista de canciones</h1>";
                                     $trackno = 1;
                                     foreach ($tracklist as $t) {
                                         echo $trackno . ". " . $t . "<br/>";
