@@ -175,7 +175,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <p><?php echo "<strong>" . $comment['nombre'] . "</strong>" . " el " . $comment['fecha'] . " comentó:"; ?></p>
                     </header>
                     <section>
-                        <p><em><?php echo $comment['comentario']; ?></em></p>
+                        <?php
+                        $multiline_comment = preg_split("/\n/", $comment['comentario']);
+                        foreach ($multiline_comment as $line)
+                            echo "<p><em>" . $line . "</em></p>";
+                        ?>
                     </section>
                 </section>
                 <?php
