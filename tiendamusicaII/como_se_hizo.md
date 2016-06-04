@@ -11,3 +11,4 @@
 - Tooltips en index y detail.
 - Se recuerda de donde se hace login o logount
 - en details se limpian los parametros get para que quede bonita la url
+- Multiline comments

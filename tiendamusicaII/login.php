@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["logout"])) {
         $_SESSION = array();
         session_destroy();
-        header("Location: " . $_SERVER['HTTP_REFERER']);
+        header("Location: index.php");
     } else {
         $user = new User(array(":nombreUsuario" => test_input($_POST["username"])));
         if (($loginResult = $user->getUser()) != false) {

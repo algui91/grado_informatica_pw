@@ -7,7 +7,7 @@ session_start();
 if (!empty($_GET)) {
     $_SESSION['get'] = $_GET;
     header('Location: details.php');
-    die;
+//    die;
 }
 
 if (isset($_SESSION['get'])) {
