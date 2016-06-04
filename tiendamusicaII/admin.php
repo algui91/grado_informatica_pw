@@ -170,7 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Avda XXXXX, YYYY, Granada, CP: 88888, example@example.com. Webmaster: Alex
         </address>
         <a href="./formulario.php">Suscribete</a>
-        <h1><a href="./como_se_hizo.pdf">¿Cómo se hizo?</a></h1>
+        <h1><a href="<?php echo BASE_URL . "como_se_hizo.pdf"; ?>">¿Cómo se hizo?</a></h1>
     </footer>
 </div>
 </body>
