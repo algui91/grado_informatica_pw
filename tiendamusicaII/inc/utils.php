@@ -26,9 +26,9 @@ function test_input($data)
     return $data;
 }
 
-function pretty_print($var)
+function pretty_print($name = "Debug", $var)
 {
-    highlight_string("<?php\n\$debug =\n" . var_export($var, true) . ";\n?>");
+    highlight_string("<?php\n" . $name . " =\n" . var_export($var, true) . ";\n?>");
 }
 
 function header_login()

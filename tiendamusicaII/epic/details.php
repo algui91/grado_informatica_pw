@@ -2,10 +2,17 @@
 require_once('../inc/utils.php');
 require_once('../db/Disc.php');
 
-header_login();
+session_start();
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (!empty($_GET)) {
+    $_SESSION['get'] = $_GET;
+    header('Location: details.php');
+    die;
+}
+
+if (isset($_SESSION['get'])) {
+
+    $id = $_SESSION['get']['id'];
 
     $d = new Disc();
 
@@ -65,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-
+<?php header_login(); ?>
 <div class="main-container">
     <main role="main" class="wrapper">
         <h2>Secciones | Generos: <a href="../epic.php">EPIC</a> / Pop / Metal | Más vendido | Más comentado</h2>
