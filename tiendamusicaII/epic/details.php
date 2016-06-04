@@ -90,18 +90,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <figure class="tooltip">
                             <img src="<?php echo BASE_URL . $cover; ?>" alt="Portada decimus" height="512px"
                                  width="512"/>
-                            <span class="tooltiptex-details">
+                            <?php
+                            if ($tracks) {
+                                ?>
+                                <span class="tooltiptex-details">
                                 <?php
-                                if ($tracks) {
-                                    echo "<h1>Lista de canciones</h1>";
-                                    $trackno = 1;
-                                    foreach ($tracks as $t) {
-                                        echo $trackno . ". " . $t . "<br/>";
-                                        $trackno += 1;
-                                    }
+                                echo "<h1>Lista de canciones</h1>";
+                                $trackno = 1;
+                                foreach ($tracks as $t) {
+                                    echo $trackno . ". " . $t . "<br/>";
+                                    $trackno += 1;
                                 }
                                 ?>
                             </span>
+                                <?php
+                            } ?>
                         </figure>
                         <p>Género: <?php echo $gender; ?></p>
                         <p>Precio: $<?php echo $price; ?></p>
